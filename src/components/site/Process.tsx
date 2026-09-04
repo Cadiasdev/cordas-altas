@@ -1,0 +1,93 @@
+import { motion } from "framer-motion";
+
+import { Reveal, SectionHeading } from "@/components/site/Reveal";
+
+const STEPS = [
+  {
+    title: "Contacto e visita",
+    desc: "Falamos consigo e agendamos a vistoria ao edifício, sem custo.",
+  },
+  {
+    title: "Diagnóstico e orçamento",
+    desc: "Avaliamos a fachada, identificamos as patologias e apresentamos um orçamento detalhado em 24h.",
+  },
+  {
+    title: "Execução em altura",
+    desc: "A equipa entra em obra com plano de segurança, equipamento certificado e sinalização da zona.",
+  },
+  {
+    title: "Entrega e garantia",
+    desc: "Verificação final consigo e relatório fotográfico do antes e depois.",
+  },
+];
+
+export function Process() {
+  return (
+    <section id="processo" className="bg-background py-16 sm:py-24">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
+        <SectionHeading eyebrow="Processo" title="Como trabalhamos" />
+
+        <div className="relative mt-12">
+          {/* Linha tracejada animada — horizontal em desktop */}
+          <svg
+            className="pointer-events-none absolute left-0 right-0 top-7 hidden h-1 w-full lg:block"
+            viewBox="0 0 1000 2"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <motion.line
+              x1="0"
+              y1="1"
+              x2="1000"
+              y2="1"
+              stroke="var(--primary)"
+              strokeWidth="2"
+              strokeDasharray="10 8"
+              initial={{ pathLength: 0 }}
+              whileInView={{ pathLength: 1 }}
+              viewport={{ once: true, amount: 0.4 }}
+              transition={{ duration: 1.4, ease: "easeInOut" }}
+            />
+          </svg>
+          {/* Vertical em mobile */}
+          <svg
+            className="pointer-events-none absolute bottom-8 left-7 top-8 w-1 lg:hidden"
+            viewBox="0 0 2 1000"
+            preserveAspectRatio="none"
+            aria-hidden="true"
+          >
+            <motion.line
+              x1="1"
+              y1="0"
+              x2="1"
+              y2="1000"
+              stroke="var(--primary)"
+              strokeWidth="2"
+              strokeDasharray="10 8"
+              initial={{ pathLength: 0 }}
+              whileInView={{ pathLength: 1 }}
+              viewport={{ once: true, amount: 0.2 }}
+              transition={{ duration: 1.4, ease: "easeInOut" }}
+            />
+          </svg>
+
+          <ol className="relative grid gap-8 lg:grid-cols-4 lg:gap-6">
+            {STEPS.map((s, i) => (
+              <Reveal key={s.title} delay={i * 0.12}>
+                <li className="flex gap-4 lg:block">
+                  <span className="flex size-14 shrink-0 items-center justify-center border-2 border-primary bg-background font-display text-xl font-black text-charcoal">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <div className="lg:mt-5 lg:pr-6">
+                    <h3 className="text-base text-charcoal">{s.title}</h3>
+                    <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+                  </div>
+                </li>
+              </Reveal>
+            ))}
+          </ol>
+        </div>
+      </div>
+    </section>
+  );
+}
