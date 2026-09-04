@@ -70,7 +70,7 @@ const STEP_FIELDS: Array<Array<keyof FormValues>> = [
   ["nome", "telemovel", "email", "descricao", "rgpd"],
 ];
 
-function FieldError({ message }: { message?: string }) {
+function FieldError({ message }: { message?: string | undefined }) {
   if (!message) return null;
   return (
     <p role="alert" className="mt-1.5 text-xs font-medium text-[oklch(0.72_0.19_25)]">
@@ -354,7 +354,7 @@ export function QuoteForm() {
                           id="rgpd"
                           checked={values.rgpd === true}
                           onCheckedChange={(c) =>
-                            setValue("rgpd", c === true as never, { shouldValidate: true })
+                            setValue("rgpd", (c === true) as true, { shouldValidate: true })
                           }
                           aria-invalid={!!errors.rgpd}
                           className="mt-0.5 border-dark-border data-[state=checked]:border-primary data-[state=checked]:bg-primary"
