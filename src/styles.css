@@ -133,10 +133,34 @@
     scroll-behavior: smooth;
     scroll-padding-top: 5rem;
   }
+
+  html,
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Telemóvel deitado: liberta a altura do hero e esconde a barra fixa de CTAs */
+@media (max-height: 500px) and (orientation: landscape) {
+  .hero-shell {
+    min-height: auto;
+    padding-top: 4.5rem;
+    padding-bottom: 2rem;
+  }
+
+  .sticky-cta-bar {
+    display: none !important;
+  }
 }
 
 @utility text-hero-skew {
-  transform: skewX(-3deg);
+  transform: skewX(-1.5deg);
+}
+
+@media (min-width: 640px) {
+  .text-hero-skew {
+    transform: skewX(-3deg);
+  }
 }
 
 /* Subtle concrete texture overlay for dark sections (max 6% opacity) */
