@@ -46,7 +46,7 @@ export function Header() {
             <a
               key={item.href}
               href={item.href}
-              className="font-display text-xs font-bold uppercase tracking-widest text-on-dark/80 transition-colors hover:text-primary"
+              className="flex min-h-11 items-center font-display text-xs font-bold uppercase tracking-widest text-on-dark/80 transition-colors hover:text-primary"
             >
               {item.label}
             </a>
@@ -56,7 +56,7 @@ export function Header() {
         <div className="flex items-center gap-2">
           <a
             href={PHONE_HREF}
-            className="hidden items-center gap-2 text-sm font-semibold text-on-dark transition-colors hover:text-primary md:flex"
+            className="hidden min-h-11 items-center gap-2 text-sm font-semibold text-on-dark transition-colors hover:text-primary md:flex"
           >
             <Phone className="size-4 text-primary" aria-hidden="true" />
             {PHONE_DISPLAY}
@@ -91,14 +91,14 @@ export function Header() {
                   key={item.href}
                   href={item.href}
                   onClick={() => setOpen(false)}
-                  className="border-b border-dark-border py-3 font-display text-sm font-bold uppercase tracking-widest text-on-dark"
+                  className="flex min-h-12 items-center border-b border-dark-border py-3 font-display text-sm font-bold uppercase tracking-widest text-on-dark"
                 >
                   {item.label}
                 </a>
               ))}
               <a
                 href={PHONE_HREF}
-                className="py-3 font-semibold text-primary"
+                className="flex min-h-12 items-center py-3 font-semibold text-primary"
                 onClick={() => setOpen(false)}
               >
                 {PHONE_DISPLAY}

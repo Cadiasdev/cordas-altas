@@ -48,11 +48,11 @@ export function Comparison() {
                     className="mt-0.5 size-5 shrink-0 text-[oklch(0.72_0.17_150)]"
                     aria-hidden="true"
                   />
-                  <p className="text-sm text-on-dark">{r.cordas}</p>
+                  <p className="break-words hyphens-auto text-sm text-on-dark">{r.cordas}</p>
                 </div>
                 <div className="flex items-start gap-3 bg-charcoal p-4">
                   <X className="mt-0.5 size-5 shrink-0 text-on-dark-muted" aria-hidden="true" />
-                  <p className="text-sm text-on-dark-muted">{r.andaimes}</p>
+                  <p className="break-words hyphens-auto text-sm text-on-dark-muted">{r.andaimes}</p>
                 </div>
               </Reveal>
             ))}
@@ -72,7 +72,7 @@ export function Comparison() {
                     <p className="font-display text-[11px] font-black uppercase tracking-[0.2em] text-primary">
                       {C.colunaCordas}
                     </p>
-                    <p className="mt-1 flex items-start gap-2 text-sm text-on-dark">
+                    <p className="mt-1 flex items-start gap-2 break-words hyphens-auto text-sm text-on-dark">
                       <Check
                         className="mt-0.5 size-4 shrink-0 text-[oklch(0.72_0.17_150)]"
                         aria-hidden="true"
@@ -84,7 +84,7 @@ export function Comparison() {
                     <p className="font-display text-[11px] font-black uppercase tracking-[0.2em] text-on-dark-muted">
                       {C.colunaAndaimes}
                     </p>
-                    <p className="mt-1 flex items-start gap-2 text-sm text-on-dark-muted">
+                    <p className="mt-1 flex items-start gap-2 break-words hyphens-auto text-sm text-on-dark-muted">
                       <X className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
                       {r.andaimes}
                     </p>
@@ -95,7 +95,7 @@ export function Comparison() {
           ))}
         </div>
 
-        <p className="mt-8 max-w-3xl text-xs text-on-dark-muted">{C.nota}</p>
+        <p className="mt-8 max-w-3xl break-words hyphens-auto text-xs text-on-dark-muted">{C.nota}</p>
       </div>
     </section>
   );

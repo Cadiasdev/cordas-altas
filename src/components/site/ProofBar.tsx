@@ -50,7 +50,7 @@ export function ProofBar() {
               <Counter value={s.value} />
               {s.suffix}
             </p>
-            <p className="mt-1 text-sm text-muted-foreground">{s.label}</p>
+            <p className="mt-1 break-words hyphens-auto text-sm text-muted-foreground">{s.label}</p>
           </div>
         ))}
       </div>
