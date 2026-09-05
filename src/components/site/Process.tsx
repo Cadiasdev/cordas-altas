@@ -62,9 +62,9 @@ export function Process() {
                   <span className="flex size-14 shrink-0 items-center justify-center border-2 border-primary bg-background font-display text-xl font-black text-charcoal">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <div className="lg:mt-5 lg:pr-6">
+                  <div className="min-w-0 lg:mt-5 lg:pr-6">
                     <h3 className="text-base text-charcoal">{s.titulo}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
+                    <p className="mt-2 break-words hyphens-auto text-sm text-muted-foreground">{s.desc}</p>
                   </div>
                 </li>
               </Reveal>

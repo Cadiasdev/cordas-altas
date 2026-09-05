@@ -25,10 +25,10 @@ export function TestimonialsFaq() {
           <h2 className="text-3xl text-charcoal sm:text-4xl">{copy.testemunhos.titulo}</h2>
           <span className="mt-4 block h-1 w-16 bg-primary" aria-hidden="true" />
 
-          <div className="mt-8 space-y-4">
+          <div className="mt-8 grid items-stretch gap-4">
             {TESTIMONIALS.map((t, i) => (
               <Reveal key={t.nome} delay={i * 0.08}>
-                <figure className="border border-border border-l-4 border-l-primary bg-card p-5">
+                <figure className="h-full border border-border border-l-4 border-l-primary bg-card p-5">
                   <div className="flex gap-1" aria-label="Avaliação de 5 em 5 estrelas">
                     {Array.from({ length: 5 }).map((_, s) => (
                       <Star
@@ -38,7 +38,7 @@ export function TestimonialsFaq() {
                       />
                     ))}
                   </div>
-                  <blockquote className="mt-3 text-sm text-charcoal">{t.texto}</blockquote>
+                  <blockquote className="mt-3 break-words hyphens-auto text-sm text-charcoal">{t.texto}</blockquote>
                   <figcaption className="mt-4 text-sm">
                     <span className="font-display font-bold uppercase tracking-wide text-charcoal">
                       {t.nome}
@@ -61,10 +61,10 @@ export function TestimonialsFaq() {
           <Accordion type="single" collapsible className="mt-8">
             {FAQ.map((item, i) => (
               <AccordionItem key={item.q} value={`faq-${i}`} className="border-border">
-                <AccordionTrigger className="text-left font-display text-sm font-bold uppercase tracking-wide text-charcoal hover:no-underline">
+                <AccordionTrigger className="min-h-11 text-left font-display text-sm font-bold uppercase tracking-wide text-charcoal hover:no-underline">
                   {item.q}
                 </AccordionTrigger>
-                <AccordionContent className="text-sm text-muted-foreground">
+                <AccordionContent className="break-words hyphens-auto text-sm text-muted-foreground">
                   {item.a}
                 </AccordionContent>
               </AccordionItem>

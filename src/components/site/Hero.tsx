@@ -21,7 +21,7 @@ const fadeUp = {
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-[100svh] items-center overflow-hidden bg-charcoal pt-24 pb-16">
+    <section className="hero-shell relative flex min-h-screen min-h-[100svh] items-center overflow-hidden bg-charcoal pt-20 pb-10 sm:pt-24 sm:pb-16">
       <img
         src={heroImg}
         alt="Técnico de acesso por cordas suspenso na fachada de um edifício alto ao fim da tarde"
@@ -29,10 +29,14 @@ export function Hero() {
         height={1280}
         fetchPriority="high"
         decoding="async"
-        className="absolute inset-0 size-full object-cover object-center"
+        className="absolute inset-0 size-full object-cover object-[72%_center] lg:object-center"
       />
       <div
-        className="absolute inset-0 bg-gradient-to-r from-charcoal/95 via-charcoal/80 to-transparent"
+        className="absolute inset-0 bg-gradient-to-t from-charcoal via-charcoal/85 to-charcoal/55 lg:hidden"
+        aria-hidden="true"
+      />
+      <div
+        className="absolute inset-0 hidden bg-gradient-to-r from-charcoal/95 via-charcoal/80 to-transparent lg:block"
         aria-hidden="true"
       />
       <div className="concrete-overlay absolute inset-0" aria-hidden="true" />
@@ -72,7 +76,7 @@ export function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="inline-block border-l-4 border-primary pl-3 font-display text-xs font-bold uppercase tracking-[0.28em] text-primary sm:text-sm"
+            className="mt-4 inline-block border-l-4 border-primary pl-3 font-display text-xs font-bold uppercase tracking-[0.28em] text-primary sm:text-sm"
           >
             {copy.hero.etiqueta}
           </motion.p>
@@ -82,7 +86,7 @@ export function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="text-hero-skew mt-5 text-[2.1rem] leading-[0.98] text-on-dark sm:text-5xl lg:text-6xl"
+            className="text-hero-skew mt-4 overflow-hidden text-[1.75rem] leading-[0.98] text-on-dark min-[380px]:text-[2.1rem] sm:mt-5 sm:text-5xl lg:text-6xl"
           >
             {copy.hero.titulo}
           </motion.h1>
@@ -92,7 +96,7 @@ export function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="mt-6 max-w-2xl text-base text-on-dark-muted sm:text-lg"
+            className="mt-4 max-w-2xl text-sm text-on-dark-muted line-clamp-3 min-[380px]:line-clamp-none sm:mt-6 sm:text-base md:text-lg"
           >
             {copy.hero.subtitulo}
           </motion.p>
@@ -102,7 +106,7 @@ export function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="mt-8 flex flex-col gap-3 sm:flex-row"
+            className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row"
           >
             <Button variant="amber" size="xl" asChild>
               <a href="#orcamento">Pedir orçamento gratuito</a>
@@ -120,10 +124,10 @@ export function Hero() {
             variants={fadeUp}
             initial="hidden"
             animate="show"
-            className="mt-10 flex flex-wrap gap-x-6 gap-y-3 border-t border-dark-border pt-6"
+            className="mt-6 grid grid-cols-2 gap-x-4 gap-y-2 border-t border-dark-border pt-4 sm:mt-10 sm:flex sm:flex-wrap sm:gap-x-6 sm:gap-y-3 sm:pt-6"
           >
             {TRUST.map(({ icon: Icon, label }) => (
-              <li key={label} className="flex items-center gap-2 text-xs text-on-dark-muted sm:text-sm">
+              <li key={label} className="flex min-w-0 items-center gap-2 text-[11px] text-on-dark-muted sm:text-sm">
                 <Icon className="size-4 shrink-0 text-primary" aria-hidden="true" />
                 {label}
               </li>
