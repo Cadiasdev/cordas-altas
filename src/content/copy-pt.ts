@@ -240,6 +240,6 @@ export const copyPt = {
       "Inspeção e diagnóstico",
     ],
   },
-} as const;
+};
 
 export type Copy = typeof copyPt;
