@@ -440,12 +440,16 @@ export function QuoteForm() {
               <Phone className="size-6 shrink-0" aria-hidden="true" />
               {PHONE_DISPLAY}
             </a>
-            <Button variant="amber" size="xl" asChild className="mt-6 w-full">
+            <Button
+              variant="amber"
+              size="xl"
+              asChild
+              className="mt-6 h-auto min-h-14 w-full whitespace-normal py-3 text-center leading-tight"
+            >
               <a
                 href={WHATSAPP_HREF}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="whitespace-normal text-center"
               >
                 <WhatsAppIcon className="size-5 shrink-0" />
                 Enviar mensagem no WhatsApp
