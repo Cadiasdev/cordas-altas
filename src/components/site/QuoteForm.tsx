@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -82,6 +82,11 @@ function FieldError({ message }: { message?: string | undefined }) {
 
 export function QuoteForm() {
   const [step, setStep] = useState(0);
+  const topRef = useRef<HTMLDivElement>(null);
+
+  const scrollToTop = () => {
+    topRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   const [sent, setSent] = useState(false);
 
   const {
@@ -110,7 +115,10 @@ export function QuoteForm() {
 
   const next = async () => {
     const ok = await trigger(STEP_FIELDS[step] as never, { shouldFocus: true });
-    if (ok) setStep((s) => Math.min(s + 1, 2));
+    if (ok) {
+      setStep((s) => Math.min(s + 1, 2));
+      scrollToTop();
+    }
   };
 
   const onSubmit = async () => {
@@ -121,7 +129,7 @@ export function QuoteForm() {
   return (
     <section
       id="orcamento"
-      className="relative overflow-hidden bg-charcoal py-16 sm:py-24"
+      className="relative overflow-hidden bg-charcoal py-16 pb-28 sm:py-24 lg:pb-24"
     >
       <div className="concrete-overlay absolute inset-0" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
@@ -133,14 +141,17 @@ export function QuoteForm() {
             {copy.formulario.titulo}
           </h2>
           <span className="mt-4 block h-1 w-16 bg-primary" aria-hidden="true" />
-          <p className="mt-4 text-on-dark-muted">
+          <p className="mt-4 break-words hyphens-auto text-on-dark-muted">
             {copy.formulario.subtitulo}
           </p>
         </div>
 
         <div className="mt-10 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
           {/* Formulário */}
-          <div className="border border-dark-border bg-charcoal-soft p-5 sm:p-8">
+          <div
+            ref={topRef}
+            className="scroll-mt-24 border border-dark-border bg-charcoal-soft p-5 sm:p-8"
+          >
             {sent ? (
               <div role="status" className="py-8 text-center">
                 <CheckCircle2 className="mx-auto size-12 text-primary" aria-hidden="true" />
@@ -259,7 +270,7 @@ export function QuoteForm() {
                             id="pisos"
                             {...register("pisos")}
                             aria-invalid={!!errors.pisos}
-                            className="mt-2 h-11 w-full rounded-sm border border-dark-border bg-charcoal px-3 text-sm text-on-dark"
+                            className="mt-2 h-11 w-full rounded-sm border border-dark-border bg-charcoal px-3 text-base text-on-dark md:text-sm"
                           >
                             <option value="">Selecione…</option>
                             {FLOORS.map((f) => (
@@ -385,7 +396,10 @@ export function QuoteForm() {
                       type="button"
                       variant="onDark"
                       size="xl"
-                      onClick={() => setStep((s) => s - 1)}
+                      onClick={() => {
+                        setStep((s) => s - 1);
+                        scrollToTop();
+                      }}
                     >
                       <ArrowLeft aria-hidden="true" />
                       Voltar
@@ -416,12 +430,12 @@ export function QuoteForm() {
           {/* Contacto direto */}
           <aside className="border-l-4 border-primary bg-charcoal-soft p-6">
             <h3 className="text-xl text-on-dark">Prefere falar diretamente?</h3>
-            <p className="mt-2 text-sm text-on-dark-muted">
+            <p className="mt-2 break-words hyphens-auto text-sm text-on-dark-muted">
               Ligue — atendemos nós, não é call center.
             </p>
             <a
               href={PHONE_HREF}
-              className="mt-6 flex items-center gap-3 font-display text-2xl font-black text-primary transition-colors hover:text-primary-light sm:text-3xl"
+              className="mt-6 flex min-h-11 items-center gap-3 font-display text-2xl font-black text-primary [overflow-wrap:anywhere] transition-colors hover:text-primary-light sm:text-3xl"
             >
               <Phone className="size-6 shrink-0" aria-hidden="true" />
               {PHONE_DISPLAY}

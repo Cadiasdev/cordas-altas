@@ -89,10 +89,10 @@ export function Gallery() {
       </div>
 
       <Dialog open={active !== null} onOpenChange={(o) => !o && setActive(null)}>
-        <DialogContent className="max-w-4xl border-dark-border bg-charcoal p-2 sm:p-3">
+        <DialogContent className="max-h-[100svh] w-[calc(100vw-1rem)] max-w-4xl overflow-y-auto border-dark-border bg-charcoal p-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] sm:p-3">
           {current ? (
             <>
-              <DialogTitle className="px-2 pt-1 font-display text-sm uppercase tracking-widest text-primary">
+              <DialogTitle className="pr-14 px-2 pt-1 font-display text-sm uppercase tracking-widest text-primary">
                 {current.caption}
               </DialogTitle>
               <img
@@ -100,7 +100,7 @@ export function Gallery() {
                 alt={current.alt}
                 width={current.w}
                 height={current.h}
-                className="max-h-[75vh] w-full object-contain"
+                className="mx-auto max-h-[70svh] w-full max-w-full object-contain"
               />
             </>
           ) : null}
