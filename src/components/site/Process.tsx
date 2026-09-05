@@ -1,31 +1,15 @@
 import { motion } from "framer-motion";
 
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
+import { copy } from "@/content";
 
-const STEPS = [
-  {
-    title: "Contacto e visita",
-    desc: "Falamos consigo e agendamos a vistoria ao edifício, sem custo.",
-  },
-  {
-    title: "Diagnóstico e orçamento",
-    desc: "Avaliamos a fachada, identificamos as patologias e apresentamos um orçamento detalhado em 24h.",
-  },
-  {
-    title: "Execução em altura",
-    desc: "A equipa entra em obra com plano de segurança, equipamento certificado e sinalização da zona.",
-  },
-  {
-    title: "Entrega e garantia",
-    desc: "Verificação final consigo e relatório fotográfico do antes e depois.",
-  },
-];
+const STEPS = copy.processo.passos;
 
 export function Process() {
   return (
     <section id="processo" className="bg-background py-16 sm:py-24">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow="Processo" title="Como trabalhamos" />
+        <SectionHeading eyebrow={copy.processo.eyebrow} title={copy.processo.titulo} />
 
         <div className="relative mt-12">
           {/* Linha tracejada animada — horizontal em desktop */}
@@ -73,13 +57,13 @@ export function Process() {
 
           <ol className="relative grid gap-8 lg:grid-cols-4 lg:gap-6">
             {STEPS.map((s, i) => (
-              <Reveal key={s.title} delay={i * 0.12}>
+              <Reveal key={s.titulo} delay={i * 0.12}>
                 <li className="flex gap-4 lg:block">
                   <span className="flex size-14 shrink-0 items-center justify-center border-2 border-primary bg-background font-display text-xl font-black text-charcoal">
                     {String(i + 1).padStart(2, "0")}
                   </span>
                   <div className="lg:mt-5 lg:pr-6">
-                    <h3 className="text-base text-charcoal">{s.title}</h3>
+                    <h3 className="text-base text-charcoal">{s.titulo}</h3>
                     <p className="mt-2 text-sm text-muted-foreground">{s.desc}</p>
                   </div>
                 </li>

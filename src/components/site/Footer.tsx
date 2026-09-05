@@ -4,15 +4,9 @@ import { Mail, MapPin, Phone } from "lucide-react";
 import { Logo } from "@/components/Logo";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { HOURS, PHONE_DISPLAY, PHONE_HREF, WHATSAPP_HREF } from "@/lib/site";
+import { copy } from "@/content";
 
-const SERVICES = [
-  "Reparação de fachadas",
-  "Pintura em altura",
-  "Impermeabilização de coberturas",
-  "Limpeza de fachadas e vidros",
-  "Redes de proteção",
-  "Inspeção e diagnóstico",
-];
+const SERVICES = copy.footer.servicos;
 
 export function Footer() {
   return (
@@ -23,8 +17,7 @@ export function Footer() {
           <div>
             <Logo variant="dark" size="md" />
             <p className="mt-5 max-w-xs text-sm text-on-dark-muted">
-              Trabalhos em altura por acesso por cordas: reabilitação e pintura de fachadas,
-              impermeabilização de coberturas, limpeza e sistemas de proteção. Sem andaimes.
+              {copy.footer.descricao}
             </p>
           </div>
 
@@ -88,8 +81,7 @@ export function Footer() {
             </h2>
             <p className="mt-4 flex gap-2 text-sm text-on-dark-muted">
               <MapPin className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
-              Todo o Portugal Continental, com maior presença em Lisboa, Setúbal, Grande Porto e
-              zonas envolventes.
+              {copy.footer.zonas}
             </p>
             <ul className="mt-5 space-y-2 text-sm">
               <li>

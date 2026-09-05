@@ -4,14 +4,11 @@ import { Award, Clock, MapPin, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { WHATSAPP_HREF } from "@/lib/site";
+import { copy } from "@/content";
 import heroImg from "@/assets/hero-rope-access.jpg";
 
-const TRUST = [
-  { icon: Award, label: "Técnicos certificados em acesso por cordas" },
-  { icon: ShieldCheck, label: "Seguro de responsabilidade civil" },
-  { icon: Clock, label: "Orçamento em 24h" },
-  { icon: MapPin, label: "Trabalhamos em todo o Continente" },
-];
+const TRUST_ICONS = [Award, ShieldCheck, Clock, MapPin];
+const TRUST = copy.hero.confianca.map((label, i) => ({ label, icon: TRUST_ICONS[i]! }));
 
 const fadeUp = {
   hidden: { opacity: 0, y: 28 },
@@ -77,7 +74,7 @@ export function Hero() {
             animate="show"
             className="inline-block border-l-4 border-primary pl-3 font-display text-xs font-bold uppercase tracking-[0.28em] text-primary sm:text-sm"
           >
-            Trabalhos em altura · Sem andaimes
+            {copy.hero.etiqueta}
           </motion.p>
 
           <motion.h1
@@ -87,7 +84,7 @@ export function Hero() {
             animate="show"
             className="text-hero-skew mt-5 text-[2.1rem] leading-[0.98] text-on-dark sm:text-5xl lg:text-6xl"
           >
-            Reabilitamos o seu edifício sem montar um único andaime.
+            {copy.hero.titulo}
           </motion.h1>
 
           <motion.p
@@ -97,8 +94,7 @@ export function Hero() {
             animate="show"
             className="mt-6 max-w-2xl text-base text-on-dark-muted sm:text-lg"
           >
-            Reparação de fachadas, pintura, impermeabilização e isolamento de coberturas por
-            acesso por cordas. Obra mais rápida, mais barata e sem ocupar a via pública.
+            {copy.hero.subtitulo}
           </motion.p>
 
           <motion.div

@@ -25,6 +25,7 @@ import { Checkbox } from "@/components/ui/checkbox";
 import { WhatsAppIcon } from "@/components/site/WhatsAppIcon";
 import { HOURS, PHONE_DISPLAY, PHONE_HREF, WHATSAPP_HREF } from "@/lib/site";
 import { cn } from "@/lib/utils";
+import { copy } from "@/content";
 
 const WORK_TYPES = [
   { value: "fachada", label: "Fachada", icon: Building2 },
@@ -126,14 +127,14 @@ export function QuoteForm() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
         <div className="max-w-2xl">
           <p className="mb-3 font-display text-xs font-bold uppercase tracking-[0.3em] text-primary">
-            Orçamento
+            {copy.formulario.eyebrow}
           </p>
           <h2 className="text-3xl text-on-dark sm:text-4xl lg:text-5xl">
-            Peça o seu orçamento gratuito
+            {copy.formulario.titulo}
           </h2>
           <span className="mt-4 block h-1 w-16 bg-primary" aria-hidden="true" />
           <p className="mt-4 text-on-dark-muted">
-            Resposta em até 24 horas úteis. Sem compromisso.
+            {copy.formulario.subtitulo}
           </p>
         </div>
 
