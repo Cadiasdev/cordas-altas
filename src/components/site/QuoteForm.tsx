@@ -150,7 +150,7 @@ export function QuoteForm() {
           {/* Formulário */}
           <div
             ref={topRef}
-            className="scroll-mt-24 border border-dark-border bg-charcoal-soft p-5 sm:p-8"
+            className="min-w-0 scroll-mt-24 border border-dark-border bg-charcoal-soft p-5 sm:p-8"
           >
             {sent ? (
               <div role="status" className="py-8 text-center">
@@ -428,21 +428,26 @@ export function QuoteForm() {
           </div>
 
           {/* Contacto direto */}
-          <aside className="border-l-4 border-primary bg-charcoal-soft p-6">
+          <aside className="min-w-0 border-l-4 border-primary bg-charcoal-soft p-6">
             <h3 className="text-xl text-on-dark">Prefere falar diretamente?</h3>
             <p className="mt-2 break-words hyphens-auto text-sm text-on-dark-muted">
               Ligue — atendemos nós, não é call center.
             </p>
             <a
               href={PHONE_HREF}
-              className="mt-6 flex min-h-11 items-center gap-3 font-display text-2xl font-black text-primary [overflow-wrap:anywhere] transition-colors hover:text-primary-light sm:text-3xl"
+              className="mt-6 flex min-h-11 items-center gap-3 font-display text-2xl font-black text-primary [overflow-wrap:anywhere] whitespace-normal transition-colors hover:text-primary-light sm:text-3xl"
             >
               <Phone className="size-6 shrink-0" aria-hidden="true" />
               {PHONE_DISPLAY}
             </a>
             <Button variant="amber" size="xl" asChild className="mt-6 w-full">
-              <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer">
-                <WhatsAppIcon className="size-5" />
+              <a
+                href={WHATSAPP_HREF}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="whitespace-normal text-center"
+              >
+                <WhatsAppIcon className="size-5 shrink-0" />
                 Enviar mensagem no WhatsApp
               </a>
             </Button>
