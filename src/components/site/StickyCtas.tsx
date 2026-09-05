@@ -25,7 +25,7 @@ export function StickyCtas() {
             animate={{ y: 0, opacity: 1 }}
             exit={{ y: 80, opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-dark-border bg-charcoal/95 p-2 backdrop-blur-sm md:hidden"
+            className="sticky-cta-bar fixed inset-x-0 bottom-0 z-50 grid grid-cols-2 gap-2 border-t border-dark-border bg-charcoal/95 p-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] backdrop-blur-sm lg:hidden"
           >
             <a
               href={PHONE_HREF}
@@ -53,7 +53,7 @@ export function StickyCtas() {
         target="_blank"
         rel="noopener noreferrer"
         aria-label="Falar com a Gomes Vertical por WhatsApp"
-        className="fixed bottom-6 right-6 z-50 hidden size-14 items-center justify-center rounded-md bg-primary text-primary-foreground shadow-amber transition-colors hover:bg-primary-light md:flex"
+        className="fixed bottom-[max(1.5rem,env(safe-area-inset-bottom))] right-[max(1.5rem,env(safe-area-inset-right))] z-50 hidden size-14 items-center justify-center rounded-md bg-primary text-primary-foreground shadow-amber transition-colors hover:bg-primary-light lg:flex"
       >
         <WhatsAppIcon className="size-7" />
       </a>
