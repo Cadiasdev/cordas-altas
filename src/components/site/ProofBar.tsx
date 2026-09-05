@@ -1,11 +1,13 @@
 import { useEffect, useRef, useState } from "react";
 import { useInView } from "framer-motion";
 
+import { copy } from "@/content";
+
 const STATS = [
-  { prefix: "+", value: 250, suffix: "", label: "intervenções concluídas" },
-  { prefix: "+", value: 15, suffix: "", label: "anos de experiência combinada" },
-  { prefix: "", value: 0, suffix: "", label: "acidentes registados" },
-  { prefix: "", value: 24, suffix: "h", label: "tempo de resposta" },
+  { prefix: "+", value: 250, suffix: "", label: copy.prova.labels[0]! },
+  { prefix: "+", value: 15, suffix: "", label: copy.prova.labels[1]! },
+  { prefix: "", value: 0, suffix: "", label: copy.prova.labels[2]! },
+  { prefix: "", value: 24, suffix: "h", label: copy.prova.labels[3]! },
 ];
 
 function Counter({ value }: { value: number }) {
