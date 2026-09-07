@@ -2,22 +2,23 @@ import { createFileRoute } from "@tanstack/react-router";
 
 import { Header } from "@/components/site/Header";
 import { Hero } from "@/components/site/Hero";
-import { ProofBar } from "@/components/site/ProofBar";
+import { ValueProp } from "@/components/site/ValueProp";
 import { Services } from "@/components/site/Services";
+import { Authority } from "@/components/site/Authority";
 import { Comparison } from "@/components/site/Comparison";
 import { Process } from "@/components/site/Process";
 import { Audiences } from "@/components/site/Audiences";
 import { Gallery } from "@/components/site/Gallery";
-import { TestimonialsFaq } from "@/components/site/TestimonialsFaq";
+import { FaqSection } from "@/components/site/FaqSection";
 import { FAQ } from "@/lib/faq";
 import { QuoteForm } from "@/components/site/QuoteForm";
+import { FinalCta } from "@/components/site/FinalCta";
 import { Footer } from "@/components/site/Footer";
 import { StickyCtas } from "@/components/site/StickyCtas";
 
-const TITLE =
-  "Alpinismo Industrial | Reparação e Pintura de Fachadas — Gomes Vertical";
+const TITLE = "Alpinismo Industrial e Acesso por Cordas | Gomes Vertical";
 const DESCRIPTION =
-  "Reparação, pintura e impermeabilização de fachadas e coberturas por acesso por cordas, sem andaimes. Orçamento gratuito em 24h em todo o Continente.";
+  "Trabalhos em altura por acesso por cordas: reparação e pintura de fachadas, coberturas, impermeabilização, limpeza e redes. Peça uma avaliação.";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -33,7 +34,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:title", content: TITLE },
       { name: "twitter:description", content: DESCRIPTION },
     ],
-    links: [{ rel: "canonical", href: "https://gomesvertical.pt/" }],
+    links: [{ rel: "canonical", href: "/" }],
     scripts: [
       {
         type: "application/ld+json",
@@ -46,18 +47,16 @@ export const Route = createFileRoute("/")({
           telephone: "+351966307024",
           areaServed: { "@type": "Country", name: "Portugal" },
           address: { "@type": "PostalAddress", addressCountry: "PT" },
-          openingHours: "Mo-Sa 08:00-19:00",
-          priceRange: "€€",
           hasOfferCatalog: {
             "@type": "OfferCatalog",
             name: "Trabalhos em altura por acesso por cordas",
             itemListElement: [
-              "Reparação e reabilitação de fachadas",
-              "Pintura de edifícios em altura",
-              "Impermeabilização e isolamento de coberturas",
-              "Limpeza de fachadas e vidros",
-              "Redes e sistemas de proteção",
-              "Inspeção e diagnóstico técnico",
+              "Reparação de fachadas",
+              "Pintura de fachadas",
+              "Impermeabilização e isolamento",
+              "Limpeza de fachadas, telhados e vidros",
+              "Redes e proteção anti-aves",
+              "Outros trabalhos em altura",
             ].map((name) => ({
               "@type": "Offer",
               itemOffered: { "@type": "Service", name },
@@ -88,14 +87,16 @@ function Index() {
       <Header />
       <main>
         <Hero />
-        <ProofBar />
+        <ValueProp />
         <Services />
+        <Authority />
         <Comparison />
         <Process />
         <Audiences />
         <Gallery />
-        <TestimonialsFaq />
+        <FaqSection />
         <QuoteForm />
+        <FinalCta />
       </main>
       <Footer />
       <StickyCtas />

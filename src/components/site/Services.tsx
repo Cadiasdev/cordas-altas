@@ -30,17 +30,6 @@ export function Services() {
                 <s.icon className="size-8 text-primary" aria-hidden="true" />
                 <h3 className="mt-4 text-lg text-charcoal">{s.titulo}</h3>
                 <p className="mt-2 break-words hyphens-auto text-sm text-muted-foreground">{s.desc}</p>
-                <ul className="mt-4 space-y-1.5 border-t border-border pt-4">
-                  {s.bullets.map((b) => (
-                    <li key={b} className="flex items-start gap-2 break-words hyphens-auto text-sm text-charcoal">
-                      <span
-                        className="mt-2 size-1.5 shrink-0 bg-primary"
-                        aria-hidden="true"
-                      />
-                      {b}
-                    </li>
-                  ))}
-                </ul>
               </article>
             </Reveal>
           ))}

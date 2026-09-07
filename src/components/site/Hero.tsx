@@ -109,18 +109,28 @@ export function Hero() {
             className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row"
           >
             <Button variant="amber" size="xl" asChild>
-              <a href="#orcamento">Pedir orçamento gratuito</a>
+              <a href="#orcamento">{copy.hero.ctaPrimario}</a>
             </Button>
             <Button variant="onDark" size="xl" asChild>
               <a href={WHATSAPP_HREF} target="_blank" rel="noopener noreferrer">
                 <WhatsAppIcon className="size-5" />
-                Falar por WhatsApp
+                {copy.hero.ctaSecundario}
               </a>
             </Button>
           </motion.div>
 
-          <motion.ul
+          <motion.p
             custom={4}
+            variants={fadeUp}
+            initial="hidden"
+            animate="show"
+            className="mt-3 max-w-lg break-words hyphens-auto text-xs text-on-dark-muted sm:text-sm"
+          >
+            {copy.hero.microcopy}
+          </motion.p>
+
+          <motion.ul
+            custom={5}
             variants={fadeUp}
             initial="hidden"
             animate="show"

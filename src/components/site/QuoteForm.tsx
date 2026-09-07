@@ -30,25 +30,17 @@ import { copy } from "@/content";
 const WORK_TYPES = [
   { value: "fachada", label: "Fachada", icon: Building2 },
   { value: "pintura", label: "Pintura", icon: Brush },
-  { value: "cobertura", label: "Cobertura / Infiltrações", icon: Droplets },
+  { value: "cobertura", label: "Cobertura", icon: Building2 },
+  { value: "impermeabilizacao", label: "Impermeabilização", icon: Droplets },
   { value: "limpeza", label: "Limpeza", icon: Sparkles },
-  { value: "redes", label: "Redes de proteção", icon: Grid2x2 },
+  { value: "redes", label: "Redes", icon: Grid2x2 },
   { value: "outro", label: "Outro", icon: HelpCircle },
-] as const;
-
-const BUILDING_TYPES = [
-  "Prédio/condomínio",
-  "Moradia",
-  "Escritório/comércio",
-  "Hotel",
-  "Industrial",
 ] as const;
 
 const FLOORS = ["1-3", "4-7", "8-15", "+15"] as const;
 
 const schema = z.object({
   tipoTrabalho: z.string().min(1, "Escolha o tipo de trabalho."),
-  tipoEdificio: z.string().min(1, "Escolha o tipo de edifício."),
   pisos: z.string().min(1, "Indique o número aproximado de pisos."),
   localidade: z.string().min(2, "Indique a localidade do edifício."),
   nome: z.string().min(2, "Indique o seu nome."),
@@ -57,7 +49,7 @@ const schema = z.object({
     .min(9, "Indique um número de telemóvel válido (9 dígitos).")
     .regex(/^[0-9+\s]{9,17}$/, "O número só pode conter dígitos, espaços e o sinal +."),
   email: z.union([z.string().email("Introduza um email válido."), z.literal("")]),
-  descricao: z.string().min(10, "Descreva brevemente o problema (pelo menos 10 caracteres)."),
+  descricao: z.string().min(10, "Descreva brevemente o trabalho (pelo menos 10 caracteres)."),
   rgpd: z.literal(true, {
     errorMap: () => ({ message: "É necessário aceitar o tratamento dos dados para continuar." }),
   }),
@@ -67,7 +59,7 @@ type FormValues = z.infer<typeof schema>;
 
 const STEP_FIELDS: Array<Array<keyof FormValues>> = [
   ["tipoTrabalho"],
-  ["tipoEdificio", "pisos", "localidade"],
+  ["localidade", "pisos"],
   ["nome", "telemovel", "email", "descricao", "rgpd"],
 ];
 
@@ -101,7 +93,7 @@ export function QuoteForm() {
     mode: "onTouched",
     defaultValues: {
       tipoTrabalho: "",
-      tipoEdificio: "",
+      
       pisos: "",
       localidade: "",
       nome: "",
@@ -156,8 +148,11 @@ export function QuoteForm() {
               <div role="status" className="py-8 text-center">
                 <CheckCircle2 className="mx-auto size-12 text-primary" aria-hidden="true" />
                 <h3 className="mt-4 text-2xl text-on-dark">Pedido recebido</h3>
+                <p className="mx-auto mt-3 max-w-md break-words hyphens-auto text-sm text-on-dark-muted">
+                  {copy.formulario.sucesso}
+                </p>
                 <p className="mx-auto mt-3 max-w-md text-sm text-on-dark-muted">
-                  Recebemos o seu pedido. Se for urgente, ligue já para{" "}
+                  Se for urgente, ligue para{" "}
                   <a href={PHONE_HREF} className="font-semibold text-primary underline">
                     {PHONE_DISPLAY}
                   </a>
@@ -173,7 +168,7 @@ export function QuoteForm() {
                       Passo {step + 1} de 3
                     </p>
                     <p className="text-xs text-on-dark-muted">
-                      {["Tipo de trabalho", "Edifício", "Contacto"][step]}
+                      {["O que precisa", "Local e edifício", "Contacto"][step]}
                     </p>
                   </div>
                   <div
@@ -196,9 +191,10 @@ export function QuoteForm() {
                   {step === 0 && (
                     <fieldset>
                       <legend className="font-display text-sm font-bold uppercase tracking-wide text-on-dark">
-                        Que tipo de trabalho precisa?
+                        O que precisa?
                       </legend>
                       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+
                         {WORK_TYPES.map((w) => {
                           const selected = values.tipoTrabalho === w.value;
                           return (
@@ -230,36 +226,7 @@ export function QuoteForm() {
                   {/* PASSO 2 */}
                   {step === 1 && (
                     <div className="space-y-6">
-                      <fieldset>
-                        <legend className="font-display text-sm font-bold uppercase tracking-wide text-on-dark">
-                          Tipo de edifício
-                        </legend>
-                        <div className="mt-3 flex flex-wrap gap-2">
-                          {BUILDING_TYPES.map((b) => {
-                            const selected = values.tipoEdificio === b;
-                            return (
-                              <button
-                                key={b}
-                                type="button"
-                                aria-pressed={selected}
-                                onClick={() =>
-                                  setValue("tipoEdificio", b, { shouldValidate: true })
-                                }
-                                className={cn(
-                                  "min-h-11 cursor-pointer rounded-sm border-2 px-4 text-xs font-semibold transition-colors",
-                                  selected
-                                    ? "border-primary bg-primary/15 text-primary"
-                                    : "border-dark-border text-on-dark hover:border-on-dark/40",
-                                )}
-                              >
-                                {b}
-                              </button>
-                            );
-                          })}
-                        </div>
-                        <input type="hidden" {...register("tipoEdificio")} />
-                        <FieldError message={errors.tipoEdificio?.message} />
-                      </fieldset>
+
 
                       <div className="grid gap-5 sm:grid-cols-2">
                         <div>
@@ -348,7 +315,7 @@ export function QuoteForm() {
 
                       <div>
                         <Label htmlFor="descricao" className="text-on-dark">
-                          Descrição breve do problema
+                          Descreva o trabalho ou problema
                         </Label>
                         <Textarea
                           id="descricao"
@@ -418,20 +385,25 @@ export function QuoteForm() {
                           A enviar…
                         </>
                       ) : (
-                        "Enviar pedido de orçamento"
+                        copy.formulario.cta
                       )}
                     </Button>
                   )}
                 </div>
+                {step === 2 && (
+                  <p className="mt-4 break-words hyphens-auto text-xs text-on-dark-muted">
+                    {copy.formulario.microcopy}
+                  </p>
+                )}
               </form>
             )}
           </div>
 
           {/* Contacto direto */}
           <aside className="min-w-0 border-l-4 border-primary bg-charcoal-soft p-6">
-            <h3 className="text-xl text-on-dark">Prefere falar diretamente?</h3>
+            <h3 className="text-xl text-on-dark">Prefere explicar por telefone?</h3>
             <p className="mt-2 break-words hyphens-auto text-sm text-on-dark-muted">
-              Ligue — atendemos nós, não é call center.
+              Ligue ou envie mensagem e descreva o trabalho e a localização.
             </p>
             <a
               href={PHONE_HREF}

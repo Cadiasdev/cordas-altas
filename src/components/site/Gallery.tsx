@@ -59,7 +59,15 @@ export function Gallery() {
     <section id="projetos" className="relative overflow-hidden bg-charcoal py-16 sm:py-24">
       <div className="concrete-overlay absolute inset-0" aria-hidden="true" />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6">
-        <SectionHeading eyebrow={copy.galeria.eyebrow} title={copy.galeria.titulo} tone="dark" />
+        <SectionHeading
+          eyebrow={copy.galeria.eyebrow}
+          title={copy.galeria.titulo}
+          subtitle={copy.galeria.subtitulo}
+          tone="dark"
+        />
+        <p className="mt-4 max-w-2xl break-words hyphens-auto text-xs text-on-dark-muted">
+          {copy.galeria.aviso}
+        </p>
 
         <div className="mt-12 columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
           {IMAGES.map((img, i) => (
