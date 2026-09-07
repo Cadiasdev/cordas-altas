@@ -102,9 +102,7 @@ export function Gallery() {
                 type="button"
                 onClick={() => setActive(i)}
                 className="group block w-full cursor-pointer overflow-hidden border border-dark-border text-left"
-                aria-label={
-                  img.caption ? `Ampliar imagem: ${img.caption}` : `Ampliar imagem: ${img.alt}`
-                }
+                aria-label={`Ampliar imagem: ${img.alt}`}
               >
                 <img
                   src={img.src}
@@ -115,11 +113,6 @@ export function Gallery() {
                   decoding="async"
                   className="w-full transition-transform duration-500 group-hover:scale-[1.04]"
                 />
-                {img.caption ? (
-                  <span className="block bg-charcoal-soft px-4 py-3 font-display text-xs font-bold uppercase tracking-widest text-on-dark-muted group-hover:text-primary">
-                    {img.caption}
-                  </span>
-                ) : null}
               </button>
             </Reveal>
           ))}
