@@ -3,53 +3,88 @@ import { useState } from "react";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 import { copy } from "@/content";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import pintura from "@/assets/gal-pintura.jpg";
-import fissura from "@/assets/gal-fissura.jpg";
-import impermeabilizacao from "@/assets/gal-impermeabilizacao.jpg";
-import vidros from "@/assets/gal-vidros.jpg";
 import redes from "@/assets/gal-redes.jpg";
-import doisTecnicos from "@/assets/gal-dois-tecnicos.jpg";
+import coberturaPintura from "@/assets/gal-cobertura-pintura.webp.asset.json";
+import coberturaAntes from "@/assets/gal-cobertura-antes.webp.asset.json";
+import predioFachada from "@/assets/gal-predio-fachada.webp.asset.json";
+import pinturaEmpena from "@/assets/gal-pintura-cordas-empena.webp.asset.json";
+import torreDoisTecnicos from "@/assets/gal-torre-dois-tecnicos.webp.asset.json";
+import torreEnvidracada from "@/assets/gal-torre-envidracada.webp.asset.json";
+import fachadaVarandas from "@/assets/gal-fachada-varandas.webp.asset.json";
+import fachadaPreparacao from "@/assets/gal-fachada-preparacao.webp.asset.json";
+import intervencaoLocalizada from "@/assets/gal-intervencao-localizada.webp.asset.json";
 
-const IMAGES_BASE = [
+type GalleryImage = {
+  src: string;
+  w: number;
+  h: number;
+  alt: string;
+  caption?: string | undefined;
+};
+
+const IMAGES: GalleryImage[] = [
   {
-    src: pintura,
+    src: coberturaPintura.url,
     w: 1024,
-    h: 1280,
-    alt: "Técnico suspenso em corda a pintar a fachada de um edifício de habitação",
-      },
+    h: 1536,
+    alt: "Cobertura metálica pintada de vermelho com estruturas pintadas de branco",
+  },
   {
-    src: fissura,
+    src: coberturaAntes.url,
     w: 1024,
-    h: 768,
-    alt: "Reparação e selagem de fissura em fachada de betão com pistola de selante",
-      },
+    h: 1536,
+    alt: "Cobertura metálica vermelha com estruturas de betão degradadas antes da intervenção",
+  },
   {
-    src: impermeabilizacao,
+    src: predioFachada.url,
     w: 1024,
-    h: 768,
-    alt: "Aplicação de membrana de impermeabilização num terraço de cobertura",
-      },
+    h: 1536,
+    alt: "Fachada de prédio de habitação pintada em tons de laranja, branco e cinzento",
+  },
   {
-    src: vidros,
+    src: pinturaEmpena.url,
+    w: 1086,
+    h: 1448,
+    alt: "Técnico suspenso em cordas a pintar a empena de um edifício",
+  },
+  {
+    src: torreDoisTecnicos.url,
     w: 1024,
-    h: 1280,
-    alt: "Técnico em acesso por cordas a limpar os vidros de uma torre de escritórios",
-      },
+    h: 1536,
+    alt: "Dois técnicos em acesso por cordas numa torre de habitação com fachada envidraçada",
+  },
+  {
+    src: torreEnvidracada.url,
+    w: 1024,
+    h: 1536,
+    alt: "Torre de habitação com fachada pintada e corpo de escadas envidraçado",
+  },
+  {
+    src: fachadaVarandas.url,
+    w: 1024,
+    h: 1536,
+    alt: "Técnicos em cordas a intervir numa fachada com varandas",
+  },
+  {
+    src: fachadaPreparacao.url,
+    w: 1024,
+    h: 1536,
+    alt: "Fachada em preparação com reparações localizadas e técnicos suspensos em cordas",
+  },
+  {
+    src: intervencaoLocalizada.url,
+    w: 1024,
+    h: 1536,
+    alt: "Técnico em cordas numa intervenção localizada na fachada de um prédio",
+  },
   {
     src: redes,
     w: 1024,
     h: 768,
     alt: "Rede anti-pombo instalada na varanda de um prédio",
-      },
-  {
-    src: doisTecnicos,
-    w: 1024,
-    h: 1280,
-    alt: "Vista de baixo de dois técnicos suspensos em cordas numa fachada",
-      },
+    caption: copy.galeria.legendas[4],
+  },
 ];
-
-const IMAGES = IMAGES_BASE.map((img, i) => ({ ...img, caption: copy.galeria.legendas[i]! }));
 
 export function Gallery() {
   const [active, setActive] = useState<number | null>(null);
@@ -71,12 +106,14 @@ export function Gallery() {
 
         <div className="mt-12 columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
           {IMAGES.map((img, i) => (
-            <Reveal key={img.caption} delay={(i % 3) * 0.06}>
+            <Reveal key={img.src} delay={(i % 3) * 0.06}>
               <button
                 type="button"
                 onClick={() => setActive(i)}
                 className="group block w-full cursor-pointer overflow-hidden border border-dark-border text-left"
-                aria-label={`Ampliar imagem: ${img.caption}`}
+                aria-label={
+                  img.caption ? `Ampliar imagem: ${img.caption}` : `Ampliar imagem: ${img.alt}`
+                }
               >
                 <img
                   src={img.src}
@@ -87,9 +124,11 @@ export function Gallery() {
                   decoding="async"
                   className="w-full transition-transform duration-500 group-hover:scale-[1.04]"
                 />
-                <span className="block bg-charcoal-soft px-4 py-3 font-display text-xs font-bold uppercase tracking-widest text-on-dark-muted group-hover:text-primary">
-                  {img.caption}
-                </span>
+                {img.caption ? (
+                  <span className="block bg-charcoal-soft px-4 py-3 font-display text-xs font-bold uppercase tracking-widest text-on-dark-muted group-hover:text-primary">
+                    {img.caption}
+                  </span>
+                ) : null}
               </button>
             </Reveal>
           ))}
@@ -101,7 +140,7 @@ export function Gallery() {
           {current ? (
             <>
               <DialogTitle className="pr-14 px-2 pt-1 font-display text-sm uppercase tracking-widest text-primary">
-                {current.caption}
+                {current.caption ?? copy.galeria.titulo}
               </DialogTitle>
               <img
                 src={current.src}
