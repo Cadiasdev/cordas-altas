@@ -130,7 +130,7 @@ export function Hero() {
           </motion.p>
 
           <motion.ul
-            custom={4}
+            custom={5}
             variants={fadeUp}
             initial="hidden"
             animate="show"

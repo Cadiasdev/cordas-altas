@@ -30,25 +30,17 @@ import { copy } from "@/content";
 const WORK_TYPES = [
   { value: "fachada", label: "Fachada", icon: Building2 },
   { value: "pintura", label: "Pintura", icon: Brush },
-  { value: "cobertura", label: "Cobertura / Infiltrações", icon: Droplets },
+  { value: "cobertura", label: "Cobertura", icon: Building2 },
+  { value: "impermeabilizacao", label: "Impermeabilização", icon: Droplets },
   { value: "limpeza", label: "Limpeza", icon: Sparkles },
-  { value: "redes", label: "Redes de proteção", icon: Grid2x2 },
+  { value: "redes", label: "Redes", icon: Grid2x2 },
   { value: "outro", label: "Outro", icon: HelpCircle },
-] as const;
-
-const BUILDING_TYPES = [
-  "Prédio/condomínio",
-  "Moradia",
-  "Escritório/comércio",
-  "Hotel",
-  "Industrial",
 ] as const;
 
 const FLOORS = ["1-3", "4-7", "8-15", "+15"] as const;
 
 const schema = z.object({
   tipoTrabalho: z.string().min(1, "Escolha o tipo de trabalho."),
-  tipoEdificio: z.string().min(1, "Escolha o tipo de edifício."),
   pisos: z.string().min(1, "Indique o número aproximado de pisos."),
   localidade: z.string().min(2, "Indique a localidade do edifício."),
   nome: z.string().min(2, "Indique o seu nome."),
@@ -57,7 +49,7 @@ const schema = z.object({
     .min(9, "Indique um número de telemóvel válido (9 dígitos).")
     .regex(/^[0-9+\s]{9,17}$/, "O número só pode conter dígitos, espaços e o sinal +."),
   email: z.union([z.string().email("Introduza um email válido."), z.literal("")]),
-  descricao: z.string().min(10, "Descreva brevemente o problema (pelo menos 10 caracteres)."),
+  descricao: z.string().min(10, "Descreva brevemente o trabalho (pelo menos 10 caracteres)."),
   rgpd: z.literal(true, {
     errorMap: () => ({ message: "É necessário aceitar o tratamento dos dados para continuar." }),
   }),
@@ -67,7 +59,7 @@ type FormValues = z.infer<typeof schema>;
 
 const STEP_FIELDS: Array<Array<keyof FormValues>> = [
   ["tipoTrabalho"],
-  ["tipoEdificio", "pisos", "localidade"],
+  ["localidade", "pisos"],
   ["nome", "telemovel", "email", "descricao", "rgpd"],
 ];
 
