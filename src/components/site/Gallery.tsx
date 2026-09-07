@@ -28,16 +28,28 @@ const IMAGES: GalleryImage[] = [
     alt: "Cobertura metálica pintada de vermelho com estruturas pintadas de branco",
   },
   {
-    src: coberturaAntes.url,
-    w: 1024,
-    h: 1536,
-    alt: "Cobertura metálica vermelha com estruturas de betão degradadas antes da intervenção",
-  },
-  {
     src: predioFachada.url,
     w: 1024,
     h: 1536,
     alt: "Fachada de prédio de habitação pintada em tons de laranja, branco e cinzento",
+  },
+  {
+    src: fachadaVarandas.url,
+    w: 1024,
+    h: 1536,
+    alt: "Técnicos em cordas a intervir numa fachada com varandas",
+  },
+  {
+    src: intervencaoLocalizada.url,
+    w: 1024,
+    h: 1536,
+    alt: "Técnico em cordas numa intervenção localizada na fachada de um prédio",
+  },
+  {
+    src: coberturaAntes.url,
+    w: 1024,
+    h: 1536,
+    alt: "Cobertura metálica vermelha com estruturas de betão degradadas antes da intervenção",
   },
   {
     src: pinturaEmpena.url,
@@ -58,22 +70,10 @@ const IMAGES: GalleryImage[] = [
     alt: "Torre de habitação com fachada pintada e corpo de escadas envidraçado",
   },
   {
-    src: fachadaVarandas.url,
-    w: 1024,
-    h: 1536,
-    alt: "Técnicos em cordas a intervir numa fachada com varandas",
-  },
-  {
     src: fachadaPreparacao.url,
     w: 1024,
     h: 1536,
     alt: "Fachada em preparação com reparações localizadas e técnicos suspensos em cordas",
-  },
-  {
-    src: intervencaoLocalizada.url,
-    w: 1024,
-    h: 1536,
-    alt: "Técnico em cordas numa intervenção localizada na fachada de um prédio",
   },
 ];
 
