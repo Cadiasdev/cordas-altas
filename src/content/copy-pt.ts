@@ -169,8 +169,6 @@ export const copyPt = {
     eyebrow: "Aplicações",
     titulo: "O trabalho vê-se no resultado.",
     subtitulo: "Exemplos de intervenções e aplicações de acesso por cordas.",
-    aviso:
-      "Imagens ilustrativas das aplicações do acesso por cordas. Não representam obras identificadas nem clientes concretos.",
   },
   faq: {
     eyebrow: "Perguntas frequentes",
