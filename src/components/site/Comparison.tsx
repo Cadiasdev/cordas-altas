@@ -1,10 +1,9 @@
-import { Check, X } from "lucide-react";
+import { Check, Minus } from "lucide-react";
 
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 import { copy } from "@/content";
 
 const C = copy.comparativo;
-const ROWS = C.linhas;
 
 export function Comparison() {
   return (
@@ -21,81 +20,54 @@ export function Comparison() {
           tone="dark"
         />
 
-        {/* Desktop: duas colunas lado a lado */}
-        <div className="mt-12 hidden lg:block">
-          <div className="grid grid-cols-[minmax(180px,1fr)_1.4fr_1.4fr] gap-px bg-dark-border">
-            <div className="bg-charcoal p-4" />
-            <div className="bg-primary p-4">
-              <p className="font-display text-sm font-black uppercase tracking-[0.2em] text-primary-foreground">
+        <div className="mt-12 grid items-stretch gap-6 lg:grid-cols-2">
+          <Reveal>
+            <div className="h-full min-w-0 border border-dark-border bg-charcoal-soft">
+              <p className="bg-primary px-4 py-3 font-display text-sm font-black uppercase tracking-[0.2em] text-primary-foreground">
                 {C.colunaCordas}
               </p>
+              <ul className="space-y-5 p-5">
+                {C.cordas.map((item) => (
+                  <li key={item.titulo} className="flex min-w-0 items-start gap-3">
+                    <Check
+                      className="mt-0.5 size-5 shrink-0 text-[oklch(0.72_0.17_150)]"
+                      aria-hidden="true"
+                    />
+                    <div className="min-w-0">
+                      <h3 className="text-sm text-on-dark">{item.titulo}</h3>
+                      <p className="mt-1 break-words hyphens-auto text-sm text-on-dark-muted">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
-            <div className="bg-charcoal-soft p-4">
-              <p className="font-display text-sm font-black uppercase tracking-[0.2em] text-on-dark-muted">
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <div className="h-full min-w-0 border border-dark-border bg-charcoal">
+              <p className="bg-charcoal-soft px-4 py-3 font-display text-sm font-black uppercase tracking-[0.2em] text-on-dark-muted">
                 {C.colunaAndaimes}
               </p>
+              <ul className="space-y-5 p-5">
+                {C.andaimes.map((item) => (
+                  <li key={item.titulo} className="flex min-w-0 items-start gap-3">
+                    <Minus className="mt-0.5 size-5 shrink-0 text-on-dark-muted" aria-hidden="true" />
+                    <div className="min-w-0">
+                      <h3 className="text-sm text-on-dark">{item.titulo}</h3>
+                      <p className="mt-1 break-words hyphens-auto text-sm text-on-dark-muted">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </li>
+                ))}
+              </ul>
             </div>
-
-            {ROWS.map((r) => (
-              <Reveal key={r.criterio} className="contents">
-                <div className="bg-charcoal-soft p-4">
-                  <p className="font-display text-sm font-bold uppercase tracking-wide text-on-dark">
-                    {r.criterio}
-                  </p>
-                </div>
-                <div className="flex items-start gap-3 bg-charcoal-soft p-4">
-                  <Check
-                    className="mt-0.5 size-5 shrink-0 text-[oklch(0.72_0.17_150)]"
-                    aria-hidden="true"
-                  />
-                  <p className="break-words hyphens-auto text-sm text-on-dark">{r.cordas}</p>
-                </div>
-                <div className="flex items-start gap-3 bg-charcoal p-4">
-                  <X className="mt-0.5 size-5 shrink-0 text-on-dark-muted" aria-hidden="true" />
-                  <p className="break-words hyphens-auto text-sm text-on-dark-muted">{r.andaimes}</p>
-                </div>
-              </Reveal>
-            ))}
-          </div>
+          </Reveal>
         </div>
 
-        {/* Mobile: cards empilhados por critério */}
-        <div className="mt-10 space-y-4 lg:hidden">
-          {ROWS.map((r, i) => (
-            <Reveal key={r.criterio} delay={i * 0.04}>
-              <article className="border border-dark-border bg-charcoal-soft">
-                <h3 className="border-b border-dark-border px-4 py-3 text-sm text-on-dark">
-                  {r.criterio}
-                </h3>
-                <div className="space-y-3 p-4">
-                  <div>
-                    <p className="font-display text-[11px] font-black uppercase tracking-[0.2em] text-primary">
-                      {C.colunaCordas}
-                    </p>
-                    <p className="mt-1 flex items-start gap-2 break-words hyphens-auto text-sm text-on-dark">
-                      <Check
-                        className="mt-0.5 size-4 shrink-0 text-[oklch(0.72_0.17_150)]"
-                        aria-hidden="true"
-                      />
-                      {r.cordas}
-                    </p>
-                  </div>
-                  <div className="border-t border-dark-border pt-3">
-                    <p className="font-display text-[11px] font-black uppercase tracking-[0.2em] text-on-dark-muted">
-                      {C.colunaAndaimes}
-                    </p>
-                    <p className="mt-1 flex items-start gap-2 break-words hyphens-auto text-sm text-on-dark-muted">
-                      <X className="mt-0.5 size-4 shrink-0" aria-hidden="true" />
-                      {r.andaimes}
-                    </p>
-                  </div>
-                </div>
-              </article>
-            </Reveal>
-          ))}
-        </div>
-
-        <p className="mt-8 max-w-3xl break-words hyphens-auto text-xs text-on-dark-muted">{C.nota}</p>
+        <p className="mt-8 max-w-3xl break-words hyphens-auto text-sm text-on-dark">{C.nota}</p>
       </div>
     </section>
   );

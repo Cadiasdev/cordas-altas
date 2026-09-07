@@ -10,9 +10,8 @@ import { cn } from "@/lib/utils";
 
 const NAV = [
   { href: "#servicos", label: "Serviços" },
-  { href: "#cordas-vs-andaimes", label: "Cordas vs andaimes" },
-  { href: "#processo", label: "Processo" },
-  { href: "#projetos", label: "Projetos" },
+  { href: "#processo", label: "Como trabalhamos" },
+  { href: "#projetos", label: "Aplicações" },
   { href: "#faq", label: "FAQ" },
 ];
 
@@ -62,7 +61,7 @@ export function Header() {
             {PHONE_DISPLAY}
           </a>
           <Button variant="amber" size="default" asChild className="hidden sm:inline-flex">
-            <a href="#orcamento">Orçamento</a>
+            <a href="#orcamento">Pedir orçamento</a>
           </Button>
           <Button
             variant="onDark"
