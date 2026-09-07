@@ -91,9 +91,6 @@ export function Gallery() {
           subtitle={copy.galeria.subtitulo}
           tone="dark"
         />
-        <p className="mt-4 max-w-2xl break-words hyphens-auto text-xs text-on-dark-muted">
-          {copy.galeria.aviso}
-        </p>
 
         <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {IMAGES.map((img, i) => (
