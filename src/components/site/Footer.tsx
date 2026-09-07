@@ -93,11 +93,16 @@ export function Footer() {
                   Termos e Condições
                 </Link>
               </li>
-              <li className="flex items-center gap-2 [overflow-wrap:anywhere]">
-                <Mail className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                Pedidos de orçamento pelo{" "}
-                <a href="#orcamento" className="underline hover:text-primary">
-                  formulário
+              <li>
+                <a
+                  href="#orcamento"
+                  className="group flex min-h-11 items-start gap-2 text-sm text-on-dark-muted transition-colors hover:text-primary"
+                >
+                  <Mail className="mt-0.5 size-4 shrink-0 text-primary" aria-hidden="true" />
+                  <span className="[overflow-wrap:anywhere]">
+                    Pedidos de orçamento pelo{" "}
+                    <span className="underline group-hover:text-primary">formulário</span>
+                  </span>
                 </a>
               </li>
             </ul>
