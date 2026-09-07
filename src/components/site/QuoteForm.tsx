@@ -93,7 +93,7 @@ export function QuoteForm() {
     mode: "onTouched",
     defaultValues: {
       tipoTrabalho: "",
-      tipoEdificio: "",
+      
       pisos: "",
       localidade: "",
       nome: "",
@@ -148,8 +148,11 @@ export function QuoteForm() {
               <div role="status" className="py-8 text-center">
                 <CheckCircle2 className="mx-auto size-12 text-primary" aria-hidden="true" />
                 <h3 className="mt-4 text-2xl text-on-dark">Pedido recebido</h3>
+                <p className="mx-auto mt-3 max-w-md break-words hyphens-auto text-sm text-on-dark-muted">
+                  {copy.formulario.sucesso}
+                </p>
                 <p className="mx-auto mt-3 max-w-md text-sm text-on-dark-muted">
-                  Recebemos o seu pedido. Se for urgente, ligue já para{" "}
+                  Se for urgente, ligue para{" "}
                   <a href={PHONE_HREF} className="font-semibold text-primary underline">
                     {PHONE_DISPLAY}
                   </a>
@@ -165,7 +168,7 @@ export function QuoteForm() {
                       Passo {step + 1} de 3
                     </p>
                     <p className="text-xs text-on-dark-muted">
-                      {["Tipo de trabalho", "Edifício", "Contacto"][step]}
+                      {["O que precisa", "Local e edifício", "Contacto"][step]}
                     </p>
                   </div>
                   <div
@@ -188,9 +191,10 @@ export function QuoteForm() {
                   {step === 0 && (
                     <fieldset>
                       <legend className="font-display text-sm font-bold uppercase tracking-wide text-on-dark">
-                        Que tipo de trabalho precisa?
+                        O que precisa?
                       </legend>
                       <div className="mt-4 grid grid-cols-2 gap-3 sm:grid-cols-3">
+
                         {WORK_TYPES.map((w) => {
                           const selected = values.tipoTrabalho === w.value;
                           return (
@@ -222,36 +226,7 @@ export function QuoteForm() {
                   {/* PASSO 2 */}
                   {step === 1 && (
                     <div className="space-y-6">
-                      <fieldset>
-                        <legend className="font-display text-sm font-bold uppercase tracking-wide text-on-dark">
-                          Tipo de edifício
-                        </legend>
-                        <div className="mt-3 flex flex-wrap gap-2">
-                          {BUILDING_TYPES.map((b) => {
-                            const selected = values.tipoEdificio === b;
-                            return (
-                              <button
-                                key={b}
-                                type="button"
-                                aria-pressed={selected}
-                                onClick={() =>
-                                  setValue("tipoEdificio", b, { shouldValidate: true })
-                                }
-                                className={cn(
-                                  "min-h-11 cursor-pointer rounded-sm border-2 px-4 text-xs font-semibold transition-colors",
-                                  selected
-                                    ? "border-primary bg-primary/15 text-primary"
-                                    : "border-dark-border text-on-dark hover:border-on-dark/40",
-                                )}
-                              >
-                                {b}
-                              </button>
-                            );
-                          })}
-                        </div>
-                        <input type="hidden" {...register("tipoEdificio")} />
-                        <FieldError message={errors.tipoEdificio?.message} />
-                      </fieldset>
+
 
                       <div className="grid gap-5 sm:grid-cols-2">
                         <div>
