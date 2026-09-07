@@ -111,8 +111,8 @@ export function Footer() {
 
         <div className="mt-12 space-y-1 border-t border-dark-border pt-6">
           <p className="break-words hyphens-auto text-[11px] text-on-dark-muted/70">
-            Gomes Vertical é a marca comercial de Gleisson Dias Unipessoal Lda. · NIF: [a
-            preencher] · Sede: [a preencher]
+            Gleisson Dias Unipessoal Lda: · NIF: 253895421 / NIPC: 519432142 · Sede: Rua de
+            Damão, 12, 2º Dtº
           </p>
           <p className="break-words hyphens-auto text-[11px] text-on-dark-muted/70">
             © 2026 Gomes Vertical. Todos os direitos reservados.
