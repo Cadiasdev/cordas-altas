@@ -1,243 +1,252 @@
 /**
- * Copy real (PT-PT) da landing page. Não apagar: é a versão de produção.
- * A versão de demonstração está em copy-demo.ts e a seleção em index.ts.
+ * Copy de produção (PT-PT) da landing page Gomes Vertical.
+ * Regra editorial: nada aqui pode afirmar factos não verificáveis
+ * (certificações, seguros, número de obras, anos, garantias, prazos).
  */
 export const copyPt = {
   hero: {
-    etiqueta: "Trabalhos em altura · Sem andaimes",
-    titulo: "Reabilitamos o seu edifício sem montar um único andaime.",
+    etiqueta: "Acesso por cordas · Alpinismo industrial",
+    titulo: "Intervimos onde outros meios de acesso complicam a obra.",
     subtitulo:
-      "Reparação de fachadas, pintura, impermeabilização e isolamento de coberturas por acesso por cordas. Obra mais rápida, mais barata e sem ocupar a via pública.",
+      "Reparação e pintura de fachadas, intervenções em coberturas, impermeabilização, limpeza e instalação de redes — com acesso por cordas e uma abordagem pensada para reduzir montagem, impacto e tempo de preparação, quando o método é adequado.",
+    ctaPrimario: "Pedir orçamento",
+    ctaSecundario: "Falar com a equipa",
+    microcopy:
+      "Descreva o trabalho e a localização. Avaliamos a solução de acesso mais adequada.",
     confianca: [
-      "Técnicos certificados em acesso por cordas",
-      "Seguro de responsabilidade civil",
-      "Orçamento em 24h",
-      "Trabalhamos em todo o Continente",
+      "Trabalhos em altura por acesso por cordas",
+      "Fachadas, coberturas e zonas de difícil acesso",
+      "Avaliação do acesso antes de orçamentar",
+      "Proposta por escrito, trabalho a trabalho",
     ],
   },
-  prova: {
-    labels: [
-      "intervenções concluídas",
-      "anos de experiência combinada",
-      "acidentes registados",
-      "tempo de resposta",
+  valor: {
+    eyebrow: "Como abordamos o trabalho",
+    titulo: "O acesso é parte do problema. Nós tratamo-lo desde o início.",
+    texto:
+      "Em muitos trabalhos de fachada e cobertura, a dificuldade não está apenas na intervenção — está em chegar ao ponto certo. O acesso por cordas permite trabalhar em zonas elevadas, recuadas ou de geometria complexa quando as condições técnicas o permitem, sem depender necessariamente de uma estrutura de andaime.",
+    pontos: [
+      {
+        titulo: "Menos estrutura no local",
+        desc: "Quando a intervenção permite trabalhar sem andaime, reduz-se a montagem e a presença de estruturas na envolvente.",
+      },
+      {
+        titulo: "Menor impacto na envolvente",
+        desc: "Uma solução de acesso mais compacta pode facilitar a circulação, preservar acessos e reduzir interferências com o edifício.",
+      },
+      {
+        titulo: "Flexibilidade de acesso",
+        desc: "Chegamos a zonas específicas da fachada e da cobertura que podem ser difíceis de alcançar por meios convencionais.",
+      },
     ],
   },
   servicos: {
     eyebrow: "Serviços",
-    titulo: "O que fazemos em altura",
+    titulo: "Um único ponto de contacto para trabalhos em altura.",
     subtitulo:
-      "Todos os trabalhos executados por acesso por cordas, com equipa própria e equipamento certificado.",
+      "Da manutenção pontual à intervenção de fachada, avaliamos o acesso e a execução como um único trabalho.",
     itens: [
       {
-        titulo: "Reparação e reabilitação de fachadas",
-        desc: "Tratamento de fissuras, reboco, juntas de dilatação e recuperação de elementos degradados.",
-        bullets: ["Selagem de fissuras", "Reparação de reboco", "Substituição de juntas"],
+        titulo: "Reparação de fachadas",
+        desc: "Fissuras, rebocos degradados, juntas e outros elementos que precisam de reparação antes que o problema evolua.",
       },
       {
-        titulo: "Pintura de edifícios em altura",
-        desc: "Pintura e repintura integral de fachadas com tintas de longa duração e acabamento uniforme.",
-        bullets: [
-          "Preparação de superfície",
-          "Primário e tinta elastomérica",
-          "Acabamento sem marcas",
-        ],
+        titulo: "Pintura de fachadas",
+        desc: "Preparação e pintura de superfícies exteriores, com atenção ao estado do suporte e ao acabamento final.",
       },
       {
-        titulo: "Impermeabilização e isolamento de coberturas",
-        desc: "Correção de infiltrações e aplicação de sistemas de isolamento térmico e hídrico em telhados.",
-        bullets: ["Deteção de infiltrações", "Telas e membranas", "Isolamento térmico"],
+        titulo: "Impermeabilização e isolamento",
+        desc: "Intervenções em coberturas e zonas de infiltração para corrigir entradas de água e melhorar o desempenho do edifício.",
       },
       {
-        titulo: "Limpeza de fachadas e vidros",
-        desc: "Lavagem técnica de superfícies e envidraçados em altura, com produtos adequados a cada material.",
-        bullets: ["Hidrolavagem controlada", "Remoção de fungos e musgo", "Vidros em altura"],
+        titulo: "Limpeza de fachadas, telhados e vidros",
+        desc: "Limpeza de superfícies exteriores e envidraçados em altura onde o acesso convencional é limitado.",
       },
       {
-        titulo: "Redes e sistemas de proteção",
-        desc: "Instalação de redes anti-pombo, bicos e sistemas de proteção de fachada e cobertura.",
-        bullets: ["Redes anti-pombo", "Remoção de ninhos", "Higienização"],
+        titulo: "Redes e proteção anti-aves",
+        desc: "Instalação de redes e sistemas de proteção em varandas, fachadas e coberturas.",
       },
       {
-        titulo: "Inspeção e diagnóstico técnico",
-        desc: "Vistoria detalhada da fachada com relatório fotográfico e plano de intervenção prioritizado.",
-        bullets: ["Relatório fotográfico", "Diagnóstico de patologias", "Orçamento por prioridade"],
+        titulo: "Outros trabalhos em altura",
+        desc: "Instalação, manutenção e intervenções pontuais que exigem acesso a zonas elevadas ou de difícil acesso.",
       },
     ],
+  },
+  autoridade: {
+    eyebrow: "Critério técnico",
+    titulo: "Nem toda a obra precisa de andaime. Nem toda a obra deve ser feita por cordas.",
+    texto:
+      "O acesso por cordas não é uma resposta universal. A solução depende da altura, geometria, superfície, duração da intervenção, cargas, condições do local e requisitos de segurança. É por isso que começamos por avaliar o trabalho e o acesso — e recomendamos o método adequado ao caso concreto.",
+    cta: "Descrever o meu trabalho",
   },
   comparativo: {
-    eyebrow: "Comparação direta",
-    titulo: "Porque é que o acesso por cordas compensa",
-    subtitulo: "A mesma obra, sem os custos e a burocracia dos andaimes.",
+    eyebrow: "Escolha do acesso",
+    titulo: "A questão não é cordas ou andaimes. É escolher o acesso certo para o trabalho.",
+    subtitulo:
+      "Cada método tem aplicações próprias. A decisão deve partir do trabalho a executar e das condições do local.",
     colunaCordas: "Acesso por cordas",
     colunaAndaimes: "Andaimes",
-    linhas: [
+    cordas: [
       {
-        criterio: "Custo total da obra",
-        cordas: "Significativamente mais baixo — sem montagem nem aluguer de estrutura",
-        andaimes: "Aluguer, montagem e desmontagem faturados à parte",
+        titulo: "Menos montagem quando aplicável",
+        desc: "Pode reduzir a necessidade de estruturas auxiliares em intervenções compatíveis com este método.",
       },
       {
-        criterio: "Prazo de execução",
-        cordas: "Início em dias, sem tempo de montagem",
-        andaimes: "Dias ou semanas só para montar e desmontar",
+        titulo: "Acesso a geometrias específicas",
+        desc: "Adequado para alcançar determinadas empenas, recuos, saliências e zonas de difícil acesso.",
       },
       {
-        criterio: "Licenças e via pública",
-        cordas: "Sem ocupação da via pública na maioria dos casos",
-        andaimes: "Licença camarária e taxas de ocupação",
+        titulo: "Menor ocupação física em muitos cenários",
+        desc: "Uma solução mais compacta pode reduzir a interferência na envolvente.",
       },
       {
-        criterio: "Impacto nos moradores",
-        cordas: "Zero estrutura à volta do edifício, janelas desimpedidas",
-        andaimes: "Edifício envolvido durante toda a obra",
-      },
-      {
-        criterio: "Segurança do imóvel",
-        cordas: "Sem pontos de fixação invasivos na fachada",
-        andaimes: "Fixações e apoios na estrutura",
-      },
-      {
-        criterio: "Acesso a zonas difíceis",
-        cordas: "Chegamos a saliências, empenas e recuos",
-        andaimes: "Limitado pela geometria da estrutura",
+        titulo: "Intervenções localizadas",
+        desc: "Particularmente útil quando é necessário chegar a pontos específicos sem montar uma estrutura extensa.",
       },
     ],
-    nota: "A poupança e o prazo variam com a dimensão e a complexidade da obra — no orçamento apresentamos a comparação para o seu caso concreto.",
+    andaimes: [
+      {
+        titulo: "Plataforma de trabalho contínua",
+        desc: "Pode ser mais adequado para determinadas obras prolongadas, equipas, ferramentas e métodos de execução.",
+      },
+      {
+        titulo: "Estabilidade e acesso permanente",
+        desc: "Pode fazer sentido quando o trabalho exige uma plataforma contínua ao longo de uma fachada.",
+      },
+      {
+        titulo: "Aplicação depende da obra",
+        desc: "A escolha deve considerar duração, dimensão, cargas, espaço disponível e requisitos do projeto.",
+      },
+    ],
+    nota: "O orçamento deve começar pela necessidade da obra, não pelo método de acesso.",
   },
   processo: {
-    eyebrow: "Processo",
-    titulo: "Como trabalhamos",
+    eyebrow: "Como trabalhamos",
+    titulo: "Do primeiro contacto à intervenção.",
     passos: [
       {
-        titulo: "Contacto e visita",
-        desc: "Falamos consigo e agendamos a vistoria ao edifício, sem custo.",
+        titulo: "Diga-nos o que precisa",
+        desc: "Envie a localização, algumas fotografias e uma descrição do problema ou trabalho pretendido.",
       },
       {
-        titulo: "Diagnóstico e orçamento",
-        desc: "Avaliamos a fachada, identificamos as patologias e apresentamos um orçamento detalhado em 24h.",
+        titulo: "Avaliamos o acesso",
+        desc: "Analisamos a fachada ou cobertura e determinamos se o acesso por cordas é adequado à intervenção.",
       },
       {
-        titulo: "Execução em altura",
-        desc: "A equipa entra em obra com plano de segurança, equipamento certificado e sinalização da zona.",
+        titulo: "Receba uma proposta clara",
+        desc: "Apresentamos o trabalho previsto, as condições relevantes e o respetivo orçamento.",
       },
       {
-        titulo: "Entrega e garantia",
-        desc: "Verificação final consigo e relatório fotográfico do antes e depois.",
+        titulo: "Executamos com método",
+        desc: "Planeamos a intervenção, preparamos a zona de trabalho, executamos e fazemos a verificação final.",
       },
     ],
   },
   publicos: {
     eyebrow: "Para quem",
-    titulo: "Trabalhamos com",
+    titulo:
+      "Trabalhos em altura para quem precisa de resolver o problema, não de gerir mais uma complicação.",
     itens: [
       {
-        titulo: "Administradores de condomínios",
-        desc: "Intervenções aprovadas em assembleia, com orçamento apresentável aos condóminos.",
+        titulo: "Condomínios e administradores",
+        desc: "Intervenções de fachada, coberturas e manutenção com uma solução de acesso pensada para reduzir o impacto no edifício e na envolvente.",
       },
       {
-        titulo: "Empresas e escritórios",
-        desc: "Manutenção de fachadas e envidraçados sem interromper a atividade.",
+        titulo: "Empresas e instalações",
+        desc: "Manutenção exterior com planeamento orientado para minimizar interferências na operação.",
       },
       {
-        titulo: "Hotelaria e turismo",
-        desc: "Obra discreta, sem andaimes à frente das janelas dos hóspedes.",
+        titulo: "Hotelaria e comércio",
+        desc: "Intervenções em altura com atenção ao impacto visual, acessos e continuidade da atividade.",
       },
       {
-        titulo: "Proprietários particulares",
-        desc: "Moradias e prédios com problemas pontuais de infiltração ou fachada.",
+        titulo: "Particulares",
+        desc: "Reparações e manutenção em moradias e edifícios onde o acesso convencional é difícil ou desproporcionado.",
       },
     ],
   },
   galeria: {
-    eyebrow: "Projetos",
-    titulo: "Trabalho feito em altura",
+    eyebrow: "Aplicações",
+    titulo: "O trabalho vê-se no resultado.",
+    subtitulo: "Exemplos de intervenções e aplicações de acesso por cordas.",
+    aviso:
+      "Imagens ilustrativas das aplicações do acesso por cordas. Não representam obras identificadas nem clientes concretos.",
     legendas: [
-      "Pintura de fachada · Edifício de habitação",
-      "Selagem de fissuras · Estrutura em betão",
-      "Impermeabilização · Terraço de cobertura",
-      "Limpeza de vidros · Torre de escritórios",
-      "Rede anti-pombo · Varanda de prédio",
-      "Trabalho em equipa · Fachada em altura",
-    ],
-  },
-  testemunhos: {
-    eyebrow: "Testemunhos",
-    titulo: "Quem já trabalhou connosco",
-    /* ATENÇÃO: exemplos ilustrativos. Substituir por testemunhos reais,
-       com autorização dos clientes, antes de publicar. */
-    itens: [
-      {
-        nome: "Rui Almeida",
-        papel: "Administrador de condomínio, Lisboa",
-        texto:
-          "Tínhamos orçamentos com andaimes que duplicavam o valor da obra. A equipa da Gomes Vertical fez a reparação e a pintura da fachada norte em nove dias, sem qualquer estrutura montada e sem pedir licença à câmara. Os condóminos nem tiveram as janelas tapadas.",
-      },
-      {
-        nome: "Sandra Ferreira",
-        papel: "Diretora de hotel, Cascais",
-        texto:
-          "O que nos convenceu foi poder manter o hotel a funcionar. Trabalharam de manhã, fora das zonas de acesso dos hóspedes, e no fim do dia não havia sinal de obra. A limpeza no final de cada dia foi impecável.",
-      },
-      {
-        nome: "Paulo Marques",
-        papel: "Proprietário de moradia, Setúbal",
-        texto:
-          "Tinha uma infiltração no topo da parede que já ninguém queria resolver sem andaime. Vieram fazer a vistoria, mandaram relatório com fotografias e o orçamento no dia seguinte. Resolveram numa manhã e ainda não voltou a entrar água.",
-      },
+      "Exemplo de intervenção em fachada",
+      "Exemplo de reparação de fissura",
+      "Exemplo de impermeabilização de cobertura",
+      "Exemplo de limpeza de envidraçados",
+      "Exemplo de instalação de rede de proteção",
+      "Exemplo de trabalho em equipa em altura",
     ],
   },
   faq: {
     eyebrow: "Perguntas frequentes",
-    titulo: "Dúvidas antes de avançar",
+    titulo: "Respostas antes de pedir orçamento.",
     itens: [
       {
-        q: "É seguro trabalhar em cordas na minha fachada?",
-        a: "Sim. O acesso por cordas segue procedimentos próprios com sistema duplo — corda de trabalho e corda de segurança independentes — e equipamento de proteção individual certificado e inspecionado. Antes de cada obra elaboramos um plano de trabalhos e de segurança específico para o edifício, com sinalização da zona em baixo. Temos seguro de responsabilidade civil ativo.",
+        q: "É seguro trabalhar por acesso por cordas?",
+        a: "O acesso por cordas é uma técnica profissional de trabalho em altura que exige planeamento, equipamento adequado e procedimentos de segurança. A segurança depende também das condições concretas do local e da execução.",
       },
       {
-        q: "Quanto custa uma intervenção por acesso por cordas?",
-        a: "Depende da altura do edifício, da área a intervir, do estado da fachada e do tipo de material aplicado. Não trabalhamos com preços de tabela porque cada fachada tem patologias diferentes. O que garantimos é orçamento gratuito, discriminado por trabalho, para poder comparar item a item com propostas com andaime.",
+        q: "Como sabem se o edifício pode ser intervencionado por cordas?",
+        a: "Avaliamos as características do edifício, pontos de ancoragem, acessos, superfície, condições do local e natureza do trabalho. Só recomendamos este método quando for tecnicamente adequado.",
       },
       {
-        q: "Precisam de licença ou de ocupar o passeio?",
-        a: "Na maioria dos casos não é necessário ocupar a via pública, porque não montamos estrutura — trabalhamos a partir da cobertura. Sinalizamos e delimitamos uma zona de segurança no solo durante os trabalhos. Quando o enquadramento do edifício obrigar a alguma autorização, avisamos e ajudamos no processo.",
+        q: "É sempre mais barato do que usar andaime?",
+        a: "Não. O custo depende do trabalho, dimensão, duração, acesso e condições do local. Quando o acesso por cordas é adequado, pode reduzir custos de montagem e estruturas auxiliares.",
       },
       {
-        q: "Quanto tempo demora uma obra de fachada?",
-        a: "Uma intervenção pontual (fissura, infiltração, limpeza localizada) resolve-se normalmente em um a três dias. Uma reabilitação e pintura completa de um alçado costuma levar uma a três semanas, conforme a área e o tempo de secagem dos produtos. O prazo estimado vai indicado no orçamento e depende também das condições meteorológicas.",
+        q: "Quanto tempo pode demorar?",
+        a: "Depende da dimensão e complexidade da intervenção, preparação necessária e condições do local. Depois de avaliar o trabalho, conseguimos indicar uma estimativa mais realista.",
       },
       {
-        q: "Trabalham com condomínios e emitem fatura?",
-        a: "Sim, trabalhamos regularmente com administrações de condomínio e emitimos sempre fatura com NIF. Preparamos a proposta num formato que pode ser apresentado em assembleia de condóminos, com os trabalhos separados por prioridade para facilitar a decisão e o faseamento da obra.",
+        q: "Preciso de licença ou ocupação da via pública?",
+        a: "Depende da intervenção, localização e forma de execução. Quando existe impacto no espaço público, podem aplicar-se requisitos e autorizações específicos.",
       },
       {
-        q: "Em que zonas do país trabalham?",
-        a: "Trabalhamos em todo o Portugal Continental. A nossa atividade concentra-se em Lisboa, Setúbal, Grande Porto e zonas envolventes, mas deslocamo-nos para obras de maior dimensão em qualquer ponto do Continente. Diga-nos a localidade e confirmamos disponibilidade e deslocação.",
+        q: "Conseguem trabalhar com o condomínio em funcionamento?",
+        a: "Em muitos casos é possível planear a intervenção para minimizar interferências com moradores, acessos e áreas comuns. As condições são avaliadas antes do início dos trabalhos.",
       },
       {
-        q: "Dão garantia sobre o trabalho executado?",
-        a: "Sim. A garantia consta por escrito no orçamento e varia com o tipo de trabalho e o sistema aplicado — impermeabilizações e pinturas têm prazos diferentes, associados também à garantia do fabricante dos materiais. No final da obra entregamos relatório fotográfico do antes e depois.",
+        q: "Podem tratar apenas uma zona da fachada?",
+        a: "Sim, quando a intervenção é tecnicamente viável. O acesso por cordas pode ser particularmente útil para intervenções localizadas.",
+      },
+      {
+        q: "Como é calculado o orçamento?",
+        a: "Consideramos o tipo de trabalho, área e estado das superfícies, altura, complexidade do acesso, materiais, duração prevista e condições específicas do local.",
       },
     ],
   },
   formulario: {
-    eyebrow: "Orçamento",
-    titulo: "Peça o seu orçamento gratuito",
-    subtitulo: "Resposta em até 24 horas úteis. Sem compromisso.",
+    eyebrow: "Avaliação",
+    titulo: "Vamos perceber o que precisa.",
+    subtitulo:
+      "Envie alguns dados sobre o trabalho. Quanto mais contexto tivermos, mais precisa será a avaliação inicial.",
+    cta: "Pedir avaliação",
+    microcopy: "Sem compromisso. Responderemos assim que possível.",
+    sucesso:
+      "Pedido recebido. Obrigado. Entraremos em contacto para perceber melhor a intervenção.",
+  },
+  ctaFinal: {
+    titulo: "Tem uma fachada, cobertura ou zona de difícil acesso para intervir?",
+    texto:
+      "Explique-nos o trabalho. Avaliamos o acesso, identificamos a solução mais adequada e apresentamos uma proposta clara.",
+    ctaPrimario: "Pedir orçamento",
+    ctaSecundario: "Ligar agora",
   },
   footer: {
     descricao:
-      "Trabalhos em altura por acesso por cordas: reabilitação e pintura de fachadas, impermeabilização de coberturas, limpeza e sistemas de proteção. Sem andaimes.",
+      "Gomes Vertical — Alpinismo Industrial. Trabalhos em altura por acesso por cordas para manutenção, reparação e intervenção em fachadas, coberturas e outras zonas de difícil acesso.",
     zonas:
-      "Todo o Portugal Continental, com maior presença em Lisboa, Setúbal, Grande Porto e zonas envolventes.",
+      "Trabalhos em Portugal Continental. Indique a localidade e confirmamos a disponibilidade.",
     servicos: [
       "Reparação de fachadas",
-      "Pintura em altura",
-      "Impermeabilização de coberturas",
-      "Limpeza de fachadas e vidros",
-      "Redes de proteção",
-      "Inspeção e diagnóstico",
+      "Pintura de fachadas",
+      "Impermeabilização e isolamento",
+      "Limpeza de fachadas, telhados e vidros",
+      "Redes e proteção anti-aves",
+      "Outros trabalhos em altura",
     ],
   },
 };
