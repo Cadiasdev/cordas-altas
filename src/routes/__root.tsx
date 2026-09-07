@@ -77,11 +77,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1, viewport-fit=cover" },
-      { title: "Alpinismo Industrial | Reparação e Pintura de Fachadas — Gomes Vertical" },
+      { title: "Alpinismo Industrial e Acesso por Cordas | Gomes Vertical" },
       {
         name: "description",
         content:
-          "Trabalhos em altura por acesso por cordas: reabilitação e pintura de fachadas, impermeabilização de coberturas e limpeza, sem andaimes.",
+          "Trabalhos em altura por acesso por cordas: reparação e pintura de fachadas, coberturas, impermeabilização, limpeza e redes. Peça uma avaliação.",
       },
       { name: "author", content: "Gomes Vertical — Alpinismo Industrial" },
       { name: "theme-color", content: "#14171A" },
