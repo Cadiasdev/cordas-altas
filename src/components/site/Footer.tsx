@@ -64,13 +64,6 @@ export function Footer() {
                   WhatsApp
                 </a>
               </li>
-              <li className="flex items-center gap-2 [overflow-wrap:anywhere]">
-                <Mail className="size-4 shrink-0 text-primary" aria-hidden="true" />
-                Pedidos de orçamento pelo{" "}
-                <a href="#orcamento" className="underline hover:text-primary">
-                  formulário
-                </a>
-              </li>
               <li>{HOURS}</li>
             </ul>
           </div>
@@ -99,6 +92,13 @@ export function Footer() {
                 >
                   Termos e Condições
                 </Link>
+              </li>
+              <li className="flex items-center gap-2 [overflow-wrap:anywhere]">
+                <Mail className="size-4 shrink-0 text-primary" aria-hidden="true" />
+                Pedidos de orçamento pelo{" "}
+                <a href="#orcamento" className="underline hover:text-primary">
+                  formulário
+                </a>
               </li>
             </ul>
           </div>
