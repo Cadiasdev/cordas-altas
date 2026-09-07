@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 import { copy } from "@/content";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import redes from "@/assets/gal-redes.jpg";
 import coberturaPintura from "@/assets/gal-cobertura-pintura.webp.asset.json";
 import coberturaAntes from "@/assets/gal-cobertura-antes.webp.asset.json";
 import predioFachada from "@/assets/gal-predio-fachada.webp.asset.json";
@@ -19,7 +18,6 @@ type GalleryImage = {
   w: number;
   h: number;
   alt: string;
-  caption?: string | undefined;
 };
 
 const IMAGES: GalleryImage[] = [
@@ -77,13 +75,6 @@ const IMAGES: GalleryImage[] = [
     h: 1536,
     alt: "Técnico em cordas numa intervenção localizada na fachada de um prédio",
   },
-  {
-    src: redes,
-    w: 1024,
-    h: 768,
-    alt: "Rede anti-pombo instalada na varanda de um prédio",
-    caption: copy.galeria.legendas[4],
-  },
 ];
 
 export function Gallery() {
@@ -111,9 +102,7 @@ export function Gallery() {
                 type="button"
                 onClick={() => setActive(i)}
                 className="group block w-full cursor-pointer overflow-hidden border border-dark-border text-left"
-                aria-label={
-                  img.caption ? `Ampliar imagem: ${img.caption}` : `Ampliar imagem: ${img.alt}`
-                }
+                aria-label={`Ampliar imagem: ${img.alt}`}
               >
                 <img
                   src={img.src}
@@ -124,11 +113,6 @@ export function Gallery() {
                   decoding="async"
                   className="w-full transition-transform duration-500 group-hover:scale-[1.04]"
                 />
-                {img.caption ? (
-                  <span className="block bg-charcoal-soft px-4 py-3 font-display text-xs font-bold uppercase tracking-widest text-on-dark-muted group-hover:text-primary">
-                    {img.caption}
-                  </span>
-                ) : null}
               </button>
             </Reveal>
           ))}
@@ -140,7 +124,7 @@ export function Gallery() {
           {current ? (
             <>
               <DialogTitle className="pr-14 px-2 pt-1 font-display text-sm uppercase tracking-widest text-primary">
-                {current.caption ?? copy.galeria.titulo}
+                {copy.galeria.titulo}
               </DialogTitle>
               <img
                 src={current.src}
