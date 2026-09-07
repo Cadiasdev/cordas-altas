@@ -315,7 +315,7 @@ export function QuoteForm() {
 
                       <div>
                         <Label htmlFor="descricao" className="text-on-dark">
-                          Descrição breve do problema
+                          Descreva o trabalho ou problema
                         </Label>
                         <Textarea
                           id="descricao"
@@ -385,20 +385,25 @@ export function QuoteForm() {
                           A enviar…
                         </>
                       ) : (
-                        "Enviar pedido de orçamento"
+                        copy.formulario.cta
                       )}
                     </Button>
                   )}
                 </div>
+                {step === 2 && (
+                  <p className="mt-4 break-words hyphens-auto text-xs text-on-dark-muted">
+                    {copy.formulario.microcopy}
+                  </p>
+                )}
               </form>
             )}
           </div>
 
           {/* Contacto direto */}
           <aside className="min-w-0 border-l-4 border-primary bg-charcoal-soft p-6">
-            <h3 className="text-xl text-on-dark">Prefere falar diretamente?</h3>
+            <h3 className="text-xl text-on-dark">Prefere explicar por telefone?</h3>
             <p className="mt-2 break-words hyphens-auto text-sm text-on-dark-muted">
-              Ligue — atendemos nós, não é call center.
+              Ligue ou envie mensagem e descreva o trabalho e a localização.
             </p>
             <a
               href={PHONE_HREF}
