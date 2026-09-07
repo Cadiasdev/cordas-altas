@@ -3,7 +3,6 @@ import { useState } from "react";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 import { copy } from "@/content";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import redes from "@/assets/gal-redes.jpg";
 import coberturaPintura from "@/assets/gal-cobertura-pintura.webp.asset.json";
 import coberturaAntes from "@/assets/gal-cobertura-antes.webp.asset.json";
 import predioFachada from "@/assets/gal-predio-fachada.webp.asset.json";
@@ -19,7 +18,6 @@ type GalleryImage = {
   w: number;
   h: number;
   alt: string;
-  caption?: string | undefined;
 };
 
 const IMAGES: GalleryImage[] = [
@@ -76,13 +74,6 @@ const IMAGES: GalleryImage[] = [
     w: 1024,
     h: 1536,
     alt: "Técnico em cordas numa intervenção localizada na fachada de um prédio",
-  },
-  {
-    src: redes,
-    w: 1024,
-    h: 768,
-    alt: "Rede anti-pombo instalada na varanda de um prédio",
-    caption: copy.galeria.legendas[4],
   },
 ];
 
