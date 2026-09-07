@@ -95,13 +95,13 @@ export function Gallery() {
           {copy.galeria.aviso}
         </p>
 
-        <div className="mt-12 columns-1 gap-4 sm:columns-2 lg:columns-3 [&>*]:mb-4">
+        <div className="mt-12 grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
           {IMAGES.map((img, i) => (
             <Reveal key={img.src} delay={(i % 3) * 0.06}>
               <button
                 type="button"
                 onClick={() => setActive(i)}
-                className="group block w-full cursor-pointer overflow-hidden border border-dark-border text-left"
+                className="group relative block aspect-[3/4] w-full cursor-pointer overflow-hidden border border-dark-border text-left"
                 aria-label={`Ampliar imagem: ${img.alt}`}
               >
                 <img
@@ -111,7 +111,7 @@ export function Gallery() {
                   height={img.h}
                   loading="lazy"
                   decoding="async"
-                  className="w-full transition-transform duration-500 group-hover:scale-[1.04]"
+                  className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
                 />
               </button>
             </Reveal>
