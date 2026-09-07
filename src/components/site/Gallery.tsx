@@ -124,7 +124,7 @@ export function Gallery() {
           {current ? (
             <>
               <DialogTitle className="pr-14 px-2 pt-1 font-display text-sm uppercase tracking-widest text-primary">
-                {current.caption ?? copy.galeria.titulo}
+                {copy.galeria.titulo}
               </DialogTitle>
               <img
                 src={current.src}
