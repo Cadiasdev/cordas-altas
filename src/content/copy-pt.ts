@@ -171,14 +171,6 @@ export const copyPt = {
     subtitulo: "Exemplos de intervenções e aplicações de acesso por cordas.",
     aviso:
       "Imagens ilustrativas das aplicações do acesso por cordas. Não representam obras identificadas nem clientes concretos.",
-    legendas: [
-      "Exemplo de intervenção em fachada",
-      "Exemplo de reparação de fissura",
-      "Exemplo de impermeabilização de cobertura",
-      "Exemplo de limpeza de envidraçados",
-      "Exemplo de instalação de rede de proteção",
-      "Exemplo de trabalho em equipa em altura",
-    ],
   },
   faq: {
     eyebrow: "Perguntas frequentes",
