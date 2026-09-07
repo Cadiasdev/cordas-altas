@@ -19,7 +19,7 @@ type GalleryImage = {
   w: number;
   h: number;
   alt: string;
-  caption?: string;
+  caption?: string | undefined;
 };
 
 const IMAGES: GalleryImage[] = [
@@ -42,7 +42,7 @@ const IMAGES: GalleryImage[] = [
     alt: "Fachada de prédio de habitação pintada em tons de laranja, branco e cinzento",
   },
   {
-    src: pinturaEmpena,
+    src: pinturaEmpena.url,
     w: 1086,
     h: 1448,
     alt: "Técnico suspenso em cordas a pintar a empena de um edifício",
