@@ -229,7 +229,7 @@ export const copyPt = {
     descricao:
       "Gomes Vertical — Alpinismo Industrial. Trabalhos em altura por acesso por cordas para manutenção, reparação e intervenção em fachadas, coberturas e outras zonas de difícil acesso.",
     zonas:
-      "Trabalhos em Portugal Continental. Indique a localidade e confirmamos a disponibilidade.",
+      "Trabalhos em Lisboa e Margem Sul. Indique a localidade e confirmamos a disponibilidade.",
     servicos: [
       "Reparação de fachadas",
       "Pintura de fachadas",
