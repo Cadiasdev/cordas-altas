@@ -35,7 +35,7 @@ export function Process() {
           </svg>
           {/* Vertical em mobile */}
           <svg
-            className="pointer-events-none absolute bottom-8 left-7 top-8 w-1 lg:hidden"
+            className="pointer-events-none absolute left-7 top-8 h-[calc(100%-4rem)] w-1 lg:hidden"
             viewBox="0 0 2 1000"
             preserveAspectRatio="none"
             aria-hidden="true"
