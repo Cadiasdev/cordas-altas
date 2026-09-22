@@ -3,15 +3,15 @@ import { useState } from "react";
 import { Reveal, SectionHeading } from "@/components/site/Reveal";
 import { copy } from "@/content";
 import { Dialog, DialogContent, DialogTitle } from "@/components/ui/dialog";
-import coberturaPintura from "@/assets/gal-cobertura-pintura.webp.asset.json";
-import coberturaAntes from "@/assets/gal-cobertura-antes.webp.asset.json";
-import predioFachada from "@/assets/gal-predio-fachada.webp.asset.json";
-import pinturaEmpena from "@/assets/gal-pintura-cordas-empena.webp.asset.json";
-import torreDoisTecnicos from "@/assets/gal-torre-dois-tecnicos.webp.asset.json";
-import torreEnvidracada from "@/assets/gal-torre-envidracada.webp.asset.json";
-import fachadaVarandas from "@/assets/gal-fachada-varandas.webp.asset.json";
-import fachadaPreparacao from "@/assets/gal-fachada-preparacao.webp.asset.json";
-import intervencaoLocalizada from "@/assets/gal-intervencao-localizada.webp.asset.json";
+import coberturaPintura from "@/assets/gal-cobertura-pintura.webp";
+import coberturaAntes from "@/assets/gal-cobertura-antes.webp";
+import predioFachada from "@/assets/gal-predio-fachada.webp";
+import pinturaEmpena from "@/assets/gal-pintura-cordas-empena.webp";
+import torreDoisTecnicos from "@/assets/gal-torre-dois-tecnicos.webp";
+import torreEnvidracada from "@/assets/gal-torre-envidracada.webp";
+import fachadaVarandas from "@/assets/gal-fachada-varandas.webp";
+import fachadaPreparacao from "@/assets/gal-fachada-preparacao.webp";
+import intervencaoLocalizada from "@/assets/gal-intervencao-localizada.webp";
 
 type GalleryImage = {
   src: string;
@@ -22,55 +22,55 @@ type GalleryImage = {
 
 const IMAGES: GalleryImage[] = [
   {
-    src: coberturaPintura.url,
+    src: coberturaPintura,
     w: 1024,
     h: 1536,
     alt: "Cobertura metálica pintada de vermelho com estruturas pintadas de branco",
   },
   {
-    src: predioFachada.url,
+    src: predioFachada,
     w: 1024,
     h: 1536,
     alt: "Fachada de prédio de habitação pintada em tons de laranja, branco e cinzento",
   },
   {
-    src: fachadaVarandas.url,
+    src: fachadaVarandas,
     w: 1024,
     h: 1536,
     alt: "Técnicos em cordas a intervir numa fachada com varandas",
   },
   {
-    src: intervencaoLocalizada.url,
+    src: intervencaoLocalizada,
     w: 1024,
     h: 1536,
     alt: "Técnico em cordas numa intervenção localizada na fachada de um prédio",
   },
   {
-    src: coberturaAntes.url,
+    src: coberturaAntes,
     w: 1024,
     h: 1536,
     alt: "Cobertura metálica vermelha com estruturas de betão degradadas antes da intervenção",
   },
   {
-    src: pinturaEmpena.url,
+    src: pinturaEmpena,
     w: 1086,
     h: 1448,
     alt: "Técnico suspenso em cordas a pintar a empena de um edifício",
   },
   {
-    src: torreDoisTecnicos.url,
+    src: torreDoisTecnicos,
     w: 1024,
     h: 1536,
     alt: "Dois técnicos em acesso por cordas numa torre de habitação com fachada envidraçada",
   },
   {
-    src: torreEnvidracada.url,
+    src: torreEnvidracada,
     w: 1024,
     h: 1536,
     alt: "Torre de habitação com fachada pintada e corpo de escadas envidraçado",
   },
   {
-    src: fachadaPreparacao.url,
+    src: fachadaPreparacao,
     w: 1024,
     h: 1536,
     alt: "Fachada em preparação com reparações localizadas e técnicos suspensos em cordas",
