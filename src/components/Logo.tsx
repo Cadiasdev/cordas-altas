@@ -1,5 +1,5 @@
 import { cn } from "@/lib/utils";
-import logoAsset from "@/assets/gomes-vertical-logo.png.asset.json";
+import logo from "@/assets/gomes-vertical-logo.png";
 
 export function Logo({
   variant: _variant = "dark",
@@ -19,7 +19,7 @@ export function Logo({
 
   return (
     <img
-      src={logoAsset.url}
+      src={logo}
       alt="Gomes Vertical — Alpinismo Industrial"
       width={1567}
       height={769}
