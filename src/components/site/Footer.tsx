@@ -78,22 +78,6 @@ export function Footer() {
             </p>
             <ul className="mt-5 space-y-2 text-sm">
               <li>
-                <Link
-                  to="/politica-de-privacidade"
-                  className="flex min-h-11 items-center underline text-on-dark-muted transition-colors hover:text-primary"
-                >
-                  Política de Privacidade
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/termos"
-                  className="flex min-h-11 items-center underline text-on-dark-muted transition-colors hover:text-primary"
-                >
-                  Termos e Condições
-                </Link>
-              </li>
-              <li>
                 <a
                   href="#orcamento"
                   className="group flex min-h-11 items-start gap-2 text-sm text-on-dark-muted transition-colors hover:text-primary"
