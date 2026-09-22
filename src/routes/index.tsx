@@ -45,7 +45,10 @@ export const Route = createFileRoute("/")({
           alternateName: "Gomes Vertical — Alpinismo Industrial",
           description: DESCRIPTION,
           telephone: "+351966307024",
-          areaServed: { "@type": "Country", name: "Portugal" },
+          areaServed: [
+            { "@type": "City", name: "Lisboa" },
+            { "@type": "AdministrativeArea", name: "Margem Sul" },
+          ],
           address: { "@type": "PostalAddress", addressCountry: "PT" },
           hasOfferCatalog: {
             "@type": "OfferCatalog",
