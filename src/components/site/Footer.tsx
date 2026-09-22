@@ -1,4 +1,3 @@
-import { Link } from "@tanstack/react-router";
 import { Mail, MapPin, Phone } from "lucide-react";
 
 import { Logo } from "@/components/Logo";
